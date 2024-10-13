@@ -47,9 +47,7 @@ export const CartContainer = styled.div`
 `;
 
 export const SearchButton = styled.button`
-  position: absolute;
-  right: 33%;
-  top: 2.5%;
+  position: fixed;
   background: none;
   border: none;
   cursor: pointer;
@@ -57,7 +55,8 @@ export const SearchButton = styled.button`
   align-items: center;
   justify-content: center;
   height: 24px;
-`;
+  margin-left: 650px;
+  `;
 
 export const SearchIcon = styled.svg`
   width: 24px;

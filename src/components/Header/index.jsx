@@ -19,12 +19,12 @@ export default function Header() {
           />
         </a>
       </section>
-      <section className="searchBar-container">
+      <section className="flex justify-around items-center">
         <SearchInput
           placeholder="Digite aqui o que está procurando"
-          className="focus:outline-none"
+          className="flex-grow p-2 focus:outline-none" // Adicione um padding para dar espaço ao placeholder
         />
-        <SearchButton type="button" className="text-grayDefault">
+        <SearchButton type="button" className="text-grayDefault p-2">
           <SearchIcon
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
