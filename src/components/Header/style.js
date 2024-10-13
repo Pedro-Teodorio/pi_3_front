@@ -33,7 +33,7 @@ export const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   /* border: 1px solid red; */
   box-sizing: border-box;
 
