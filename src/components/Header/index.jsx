@@ -10,7 +10,7 @@ import {
 
 export default function Header() {
   return (
-    <HeaderTag className="font-inter flex items-center justify-around">
+    <HeaderTag className="flex items-center justify-around font-inter">
       <section className="logo-container">
         <a href="#">
           <ImageLogo
@@ -19,12 +19,12 @@ export default function Header() {
           />
         </a>
       </section>
-      <section className="flex justify-around items-center">
+      <section className="flex items-center justify-around">
         <SearchInput
           placeholder="Digite aqui o que está procurando"
           className="flex-grow p-2 focus:outline-none" // Adicione um padding para dar espaço ao placeholder
         />
-        <SearchButton type="button" className="text-grayDefault p-2">
+        <SearchButton type="button" className="p-2 text-grayDefault">
           <SearchIcon
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

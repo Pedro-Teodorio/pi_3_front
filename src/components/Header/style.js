@@ -39,6 +39,10 @@ export const LoginContainer = styled.div`
 
   a {
     font-size: 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -56,7 +60,7 @@ export const SearchButton = styled.button`
   justify-content: center;
   height: 24px;
   margin-left: 650px;
-  `;
+`;
 
 export const SearchIcon = styled.svg`
   width: 24px;
