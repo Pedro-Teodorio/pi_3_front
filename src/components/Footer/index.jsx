@@ -1,6 +1,6 @@
 import { FooterContainer, ImageLogo, LinkSocial } from './style';
 import { FaFacebook } from 'react-icons/fa';
-import { BsTwitterX } from 'react-icons/bs';
+import { BsTwitter } from 'react-icons/bs';
 import { FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
@@ -29,7 +29,7 @@ export default function Footer() {
           </li>
           <li>
             <LinkSocial href="#">
-              <BsTwitterX />
+              <BsTwitter />
             </LinkSocial>
           </li>
           <li>
