@@ -1,12 +1,12 @@
-import Header from './components/Header';
-import Nav from './components/Nav';
+import { BrowserRouter } from 'react-router-dom';
+
+import Router from './Router';
 
 function App() {
   return (
-    <>
-      <Header />
-      <Nav />
-    </>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   );
 }
 
