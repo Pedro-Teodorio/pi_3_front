@@ -24,7 +24,7 @@ export default function Header() {
           placeholder="Digite aqui o que está procurando"
           className="flex-grow p-2 focus:outline-none" // Adicione um padding para dar espaço ao placeholder
         />
-        <SearchButton type="button" className="p-2 text-grayDefault">
+        <SearchButton type="button" className="p-2 text-neutral-800">
           <SearchIcon
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
