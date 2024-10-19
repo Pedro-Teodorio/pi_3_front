@@ -12,8 +12,7 @@ export const ListCateg = styled.ul`
 
   li {
     a {
-
-    font-size: 14px;
+      font-size: 14px;
       &:hover {
         transition: 0.4s;
         color: black;

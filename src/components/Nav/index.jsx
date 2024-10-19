@@ -1,20 +1,34 @@
 import { NavBar, ListCateg } from './style';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+
 export default function Nav() {
+  const [categorias, setCategorias] = useState([]); // Inicializa como um array vazio
+
+  useEffect(() => {
+    const url = 'http://127.0.0.1:8000/api/categorias'; // Substitua pela URL real da sua API
+    axios
+      .get(url)
+      .then((response) => {
+        setCategorias(response.data);
+      })
+      .catch((error) => {
+        console.error('Erro ao buscar dados da API:', error);
+      });
+  }, []);
+
+  console.log(categorias);
   return (
-    <NavBar className="bg-primary font-inter flex justify-center items-center font-bold">
+    <NavBar className="flex items-center justify-center bg-primary font-inter font-bold">
+      {/* Limitar quatidade de lista atés 5 categorias, listando pela que tem mais produtos  */}
       <ListCateg>
-        <li className="text-white">
-          <a href="#">Processadores</a>
-        </li>
-        <li className="text-white">
-          <a href="#">Placa Mãe</a>
-        </li>
-        <li className="text-white">
-          <a href="#">Memória Ram</a>
-        </li>
-        <li className="text-white">
-          <a href="#">Gabinete</a>
-        </li>
+        {categorias.map((categoria) => {
+          return (
+            <li className="text-white" key={categoria.id}>
+              <a href="#">{categoria.nome}</a>
+            </li>
+          );
+        })}
       </ListCateg>
     </NavBar>
   );

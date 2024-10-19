@@ -5,7 +5,7 @@ import Nav from '../../components/Nav';
 
 export default function Home() {
   return (
-    <div className='box-border'>
+    <div className="box-border">
       <Header />
       <Nav />
       <HeroSection />

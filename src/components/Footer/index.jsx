@@ -18,10 +18,10 @@ export default function Footer() {
         </p>
       </section>
       <section className="flex h-[103px] w-[195px] flex-col items-center justify-center gap-2">
-        <h3 className="text-primary text-head-sm font-bold">
+        <h3 className="text-head-sm font-bold text-primary">
           Entre em contato
         </h3>
-        <ul className='flex gap-4'>
+        <ul className="flex gap-4">
           <li>
             <LinkSocial href="#">
               <FaFacebook />
