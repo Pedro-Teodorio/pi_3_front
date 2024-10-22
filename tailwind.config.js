@@ -4,6 +4,7 @@ export default {
   theme: {
     fontFamily: {
       inter: ['Inter', 'sans-serif'],
+      rubik: ["'Rubik Wet Paint'", 'system-ui'],
     },
     colors: {
       transparent: 'transparent',
