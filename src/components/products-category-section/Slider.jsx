@@ -11,18 +11,15 @@ export const Slider = () => {
       {/* <ChevronLeft className="prev size-20  text-primary" /> */}
       <Swiper
         modules={[Navigation]}
-        navigation= {true}
+        navigation={true}
         slidesPerView={3}
         grabCursor={true}
       >
-        {
-            Array.from({ length: 10 }).map((_, index) => (
-                <SwiperSlide key={index}>
-                    <Card />
-                </SwiperSlide>
-            ))
-        }
-        
+        {Array.from({ length: 10 }).map((_, index) => (
+          <SwiperSlide key={index}>
+            <Card />
+          </SwiperSlide>
+        ))}
       </Swiper>
       {/* <ChevronRight className="next size-20 text-primary" /> */}
     </SliderContainer>

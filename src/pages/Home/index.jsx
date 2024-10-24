@@ -6,13 +6,13 @@ import { ProductsCategorySection } from '../../components/products-category-sect
 
 export default function Home() {
   return (
-    <div className="box-border bg-neutral-900">
+    <section className="box-border bg-neutral-900">
       <Header />
       <Nav />
       <HeroSection />
       <ProductsCategorySection name_section="Mais Novos" />
       <ProductsCategorySection name_section="Processadores" />
       <Footer />
-    </div>
+    </section>
   );
 }

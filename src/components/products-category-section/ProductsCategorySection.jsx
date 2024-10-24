@@ -1,9 +1,10 @@
 import { SectionProductsContainer } from './style';
 import { Slider } from './Slider';
 import { ArrowRight } from 'lucide-react';
-export const ProductsCategorySection = ({name_section}) => {
+// eslint-disable-next-line react/prop-types
+export const ProductsCategorySection = ({ name_section }) => {
   return (
-    <SectionProductsContainer>
+    <SectionProductsContainer className="m-auto my-10 flex flex-col">
       <div className="flex items-center justify-between">
         <h2 className="pl-16 text-head-md font-bold text-primary">
           {name_section}
