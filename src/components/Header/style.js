@@ -12,21 +12,6 @@ export const ImageLogo = styled.img`
   height: 40px;
 `;
 
-export const SearchInput = styled.input`
-  display: flex;
-  align-items: center;
-  width: 740px;
-  height: 32px;
-  background: white;
-  border-radius: 8px;
-  padding-inline: 32px;
-  font-size: 14px;
-
-  ::placeholder {
-    color: #939393;
-  }
-`;
-
 export const LoginContainer = styled.div`
   height: 48px;
   width: 120px;
@@ -50,8 +35,22 @@ export const CartContainer = styled.div`
   /* Estilo para carrinho */
 `;
 
+export const SearchInput = styled.input`
+  display: flex;
+  align-items: center;
+  width: 740px;
+  height: 32px;
+  background: white;
+  border-radius: 8px;
+  padding-inline: 32px;
+  font-size: 14px;
+
+  ::placeholder {
+    color: #939393;
+  }
+`;
 export const SearchButton = styled.button`
-  position: fixed;
+  position: absolute;
   background: none;
   border: none;
   cursor: pointer;
