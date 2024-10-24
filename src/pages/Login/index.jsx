@@ -17,7 +17,7 @@ export default function Login() {
           />
           <Input
             type="password"
-            className="h-[60px] w-[440px] rounded-md bg-black px-8"
+            className="h-[60px] w-[440px] rounded-md bg-black px-8 text-neutral-500"
             placeholder="Senha"
           />
           <ButtonContainer>
