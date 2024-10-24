@@ -2,8 +2,12 @@ import { ChevronRight } from 'lucide-react';
 
 export const Card = () => {
   return (
-    <div className="flex w-72  flex-col gap-4 rounded-xl  bg-black p-4 font-inter">
-      <img src="https://hotsite.pichau.com.br/nvidia/rtx4090/images/rtx-4090.png" alt="" className='object-cover w-60 mx-auto'/>
+    <div className="flex w-72 flex-col gap-4 rounded-xl bg-black p-4 font-inter">
+      <img
+        src="https://hotsite.pichau.com.br/nvidia/rtx4090/images/rtx-4090.png"
+        alt=""
+        className="mx-auto w-60 object-cover"
+      />
 
       <p className="text-head-sm font-bold text-white">R$ 3999,99</p>
       <div>

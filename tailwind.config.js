@@ -14,11 +14,11 @@ export default {
         secondary: '#0096CC',
         'neutral-800': '#939393',
         'neutral-400': '#A3A3A3',
-        'neutral-950': '#0A0A0A',
+        'neutral-950': '#171717',
         white: '#ffffff',
         black: '#000000',
       },
-        fontSize: {
+      fontSize: {
         'head-lg': '32px',
         'head-md': '20px',
         'head-sm': '18px',

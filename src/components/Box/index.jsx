@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function Box({ children }) {
   return (
-    <BoxContainer className="flex items-center justify-center text-white font-rubik text-head-lg">
+    <BoxContainer className="flex items-center justify-center font-rubik text-head-lg text-white">
       {children}
     </BoxContainer>
   );
