@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <HeaderTag className="flex items-center justify-around font-inter">
       <section className="logo-container">
-        <a href="#">
+        <a href="/">
           <ImageLogo
             src="logo.svg"
             alt="Logo do site, representado por um lobo."
@@ -46,7 +46,7 @@ export default function Header() {
         <LoginContainer>
           <img src="profile.svg" alt="Icone com representando perfil." />
 
-          <a href="#" className="text-white">
+          <a href="/login" className="text-white">
             Entrar ou Cadastre-se
           </a>
         </LoginContainer>

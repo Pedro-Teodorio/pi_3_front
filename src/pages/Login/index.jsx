@@ -1,3 +1,4 @@
+import Button from '../../components/Button';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import { Input, ButtonContainer } from './style';
@@ -19,7 +20,17 @@ export default function Login() {
             className="h-[60px] w-[440px] rounded-md bg-black px-8"
             placeholder="Senha"
           />
-          <ButtonContainer></ButtonContainer>
+          <ButtonContainer>
+            <Button>Entrar</Button>
+          </ButtonContainer>
+          <article className='w-full flex justify-center'>
+            <p className='text-white'>
+              Não tem conta ainda?{' '}
+              <span className='text-primary'>
+                <a href="/cadastro">Crie sua conta agora</a>
+              </span>
+            </p>
+          </article>
         </form>
       </section>
       <Footer />
