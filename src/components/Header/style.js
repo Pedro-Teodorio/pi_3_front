@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const HeaderTag = styled.header`
   width: 100vw;
+  max-width: 100%;
   height: 64px;
   background: black;
   box-sizing: border-box;
