@@ -1,14 +1,13 @@
 import { NavBar, ListCateg } from './style';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
+import api from '../../api/axiosConfig';
 
 export default function Nav() {
   const [categorias, setCategorias] = useState([]); // Inicializa como um array vazio
 
   useEffect(() => {
-    const url = 'http://127.0.0.1:8000/api/categorias'; // Substitua pela URL real da sua API
-    axios
-      .get(url)
+    api
+      .get('/api/categorias')
       .then((response) => {
         setCategorias(response.data);
       })
