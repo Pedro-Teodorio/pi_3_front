@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Configura a URL base da API
 const api = axios.create({
-  baseURL: 'http://localhost:8000/', // Ajuste para a URL do seu backend
+  baseURL: 'http://127.0.0.1:8000',
 });
 
 // Função para recuperar o token de localStorage e setar no cabeçalho

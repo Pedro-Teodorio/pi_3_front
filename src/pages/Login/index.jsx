@@ -21,7 +21,6 @@ export default function Login() {
     setError('');
     setLoading(true);
 
-    // Validações de email e senha
     if (!email || !password) {
       setError('Preencha todos os campos');
       setLoading(false);
@@ -36,18 +35,27 @@ export default function Login() {
 
     try {
       const response = await api.post('/api/login', { email, password });
-      const token = response.data.token;
 
-      // Armazena o token e configura o cabeçalho de autorização
-      localStorage.setItem('token', token);
-      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      window.location.href = '/perfil';
+      if (response.status === 200) {
+        localStorage.setItem('token', response.data.token);
+        window.location.href = '/perfil';
+      } else {
+        setError('Erro ao fazer login, não foi possível validar credenciais.');
+      }
     } catch (error) {
-      setError(
-        error.response?.status === 401
-          ? 'Credenciais inválidas'
-          : 'Erro ao tentar se conectar. Tente novamente mais tarde.'
-      );
+      if (error.response) {
+        if (error.response.status === 401) {
+          setError('Credenciais inválidas');
+        } else {
+          setError(
+            'Erro ao se conectar ao servidor. Tente novamente mais tarde.'
+          );
+        }
+      } else if (error.request) {
+        setError('Servidor indisponível. Verifique sua conexão.');
+      } else {
+        setError('Ocorreu um erro inesperado. Tente novamente.');
+      }
       console.error('Erro de autenticação:', error);
     } finally {
       setLoading(false);
