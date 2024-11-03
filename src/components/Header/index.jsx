@@ -7,17 +7,18 @@ import {
   SearchButton,
   SearchIcon,
 } from './style';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
     <HeaderTag className="flex items-center justify-around font-inter">
       <section className="logo-container">
-        <a href="/">
+        <Link to={'/'}>
           <ImageLogo
             src="logo.svg"
             alt="Logo do site, representado por um lobo."
           />
-        </a>
+        </Link>
       </section>
       <section className="flex items-center justify-around">
         <SearchInput
@@ -46,14 +47,14 @@ export default function Header() {
         <LoginContainer>
           <img src="profile.svg" alt="Icone com representando perfil." />
 
-          <a href="/login" className="text-white">
+          <Link to={'/login'} className="text-white">
             Entrar ou Cadastre-se
-          </a>
+          </Link>
         </LoginContainer>
         <CartContainer>
-          <a href="#">
+          <Link to={'#'}>
             <img src="cart.svg" alt="Imagem de um carrinho de mercado." />
-          </a>
+          </Link>
         </CartContainer>
       </section>
     </HeaderTag>

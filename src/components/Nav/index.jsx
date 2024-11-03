@@ -2,6 +2,7 @@ import { NavBar, ListCateg } from './style';
 import { useState, useEffect } from 'react';
 import api from '../../api/axiosConfig';
 
+
 export default function Nav() {
   const [categorias, setCategorias] = useState([]); // Inicializa como um array vazio
 
