@@ -35,9 +35,10 @@ export default function Login() {
 
     try {
       const response = await api.post('/api/login', { email, password });
+      const token = response.data.token;
+      localStorage.setItem('token', token); // Certifique-se de usar a chave correta
 
       if (response.status === 200) {
-        
         window.location.href = '/perfil';
       } else {
         setError('Erro ao fazer login, não foi possível validar credenciais.');
