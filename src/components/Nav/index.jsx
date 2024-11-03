@@ -21,7 +21,7 @@ export default function Nav() {
     <NavBar className="flex items-center justify-center bg-primary font-inter font-bold">
       {/* Limitar quatidade de lista atés 5 categorias, listando pela que tem mais produtos  */}
       <ListCateg>
-        {categorias.map((categoria) => {
+        {categorias.slice(0, 5).map((categoria) => {
           return (
             <li className="text-white" key={categoria.id}>
               <a href="#">{categoria.nome}</a>
