@@ -1,7 +1,14 @@
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+
+import { PerfilContainer } from './style';
+
 export default function Perfil() {
   return (
-    <div>
-      <h1>Meu Perfil</h1>
-    </div>
+    <>
+      <Header />
+      <PerfilContainer className="bg-dark-gray"></PerfilContainer>
+      <Footer />
+    </>
   );
 }

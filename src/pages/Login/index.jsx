@@ -37,7 +37,7 @@ export default function Login() {
       const response = await api.post('/api/login', { email, password });
 
       if (response.status === 200) {
-        localStorage.setItem('token', response.data.token);
+        
         window.location.href = '/perfil';
       } else {
         setError('Erro ao fazer login, não foi possível validar credenciais.');
@@ -65,7 +65,7 @@ export default function Login() {
   return (
     <section className="font-inter">
       <Header />
-      <section className="flex h-[720px] w-full flex-col items-center justify-center gap-5 bg-neutral-950">
+      <section className="flex h-[720px] w-full flex-col items-center justify-center gap-5 bg-dark-gray">
         <h2 className="text-head-lg text-white">Inicie sua sessão</h2>
         <form onSubmit={handleLogin} className="flex flex-col gap-5">
           <Input

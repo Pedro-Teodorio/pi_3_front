@@ -6,7 +6,7 @@ import { ProductsCategorySection } from '../../components/products-category-sect
 
 export default function Home() {
   return (
-    <section className="box-border bg-neutral-900">
+    <section className="box-border bg-dark-gray">
       <Header />
       <Nav />
       <HeroSection />

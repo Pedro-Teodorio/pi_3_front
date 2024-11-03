@@ -13,6 +13,7 @@ export default {
         primary: '#34C9FF',
         secondary: '#0096CC',
         white: '#ffffff',
+        'dark-gray': '#171717',
         black: '#000000',
       },
       fontSize: {
