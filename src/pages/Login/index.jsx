@@ -4,6 +4,8 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import { Input, ButtonContainer } from './style';
 import api from '../../api/axiosConfig';
+import { Mail, KeyRound } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -68,32 +70,48 @@ export default function Login() {
       <Header />
       <section className="flex h-[720px] w-full flex-col items-center justify-center gap-5 bg-dark-gray">
         <h2 className="text-head-lg text-white">Inicie sua sessão</h2>
-        <form onSubmit={handleLogin} className="flex flex-col gap-5">
-          <Input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="h-[60px] w-[440px] rounded-md bg-black px-8 text-neutral-500"
-            placeholder="E-mail"
-          />
-          <Input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="h-[60px] w-[440px] rounded-md bg-black px-8 text-neutral-500"
-            placeholder="Senha"
-          />
+        <form
+          onSubmit={handleLogin}
+          className="flex flex-col items-center gap-5"
+        >
+          <div className="relative w-[440px]">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 transform text-neutral-500">
+              <Mail />
+            </span>
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="h-[60px] w-full rounded-md bg-black px-12 text-neutral-500 placeholder:text-neutral-500"
+              placeholder="E-mail"
+            />
+          </div>
+
+          <div className="relative w-[440px]">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 transform text-neutral-500">
+              <KeyRound />
+            </span>
+            <Input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="h-[60px] w-full rounded-md bg-black px-12 text-neutral-500 placeholder:text-neutral-500"
+              placeholder="Senha"
+            />
+          </div>
+
           <ButtonContainer className="flex flex-col items-center justify-center gap-5">
             <Button type="submit" disabled={loading}>
               {loading ? 'Entrando...' : 'Entrar'}
             </Button>
             {error && <p className="text-red-600">{error}</p>}
           </ButtonContainer>
+
           <article className="flex w-full justify-center">
             <p className="text-white">
               Não tem conta ainda?{' '}
               <span className="text-primary">
-                <a href="/cadastro">Crie sua conta agora</a>
+                <Link to={'/cadastro'}>Crie sua conta agora</Link>
               </span>
             </p>
           </article>
