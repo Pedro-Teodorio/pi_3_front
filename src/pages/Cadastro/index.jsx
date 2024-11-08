@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import api from '../../api/axiosConfig';
+import { Link } from 'react-router-dom';
+import Button from '../../components/Button';
 
 export const Cadastro = () => {
   const {
@@ -51,11 +53,11 @@ export const Cadastro = () => {
       });
   };
   return (
-    <>
+    <div className="font-inter">
       <Header />
-      <div className="flex h-[706px] space-y-4 bg-neutral-800 p-6">
+      <div className="flex h-[706px] space-y-4 bg-dark-gray p-6">
         <div className="flex w-full flex-col items-center justify-center gap-8">
-          <h1 className="text-2xl text-neutral-50">Crie sua conta</h1>
+          <h1 className="text-head-lg text-neutral-50">Crie sua conta</h1>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="grid w-full max-w-4xl grid-cols-2 gap-4"
@@ -143,27 +145,23 @@ export const Cadastro = () => {
               )}
             </div>
 
-            <div className="col-span-2 flex flex-col gap-2">
-              <button
-                type="submit"
-                className="mx-auto h-12 w-48 space-x-2.5 rounded-lg bg-primary text-neutral-50"
-              >
-                <span className="text-font-button font-medium">Cria Conta</span>
-                <ArrowRight className="inline size-4" />
-              </button>
+            <div className="col-span-2 mt-5 flex flex-col items-center gap-5">
+              <Button type="submit">
+                Cria Conta <ArrowRight className="ml-3 inline size-4" />
+              </Button>
 
               <p className="flex justify-center gap-2 text-center text-sm text-white">
                 Já possui conta?{' '}
-                <a href="\login" className="flex items-center text-primary">
+                <Link to={'/login'} className="flex items-center text-primary">
                   Acesse sua conta agora
                   <ArrowUpRight className="inline size-3" />
-                </a>
+                </Link>
               </p>
             </div>
           </form>
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
