@@ -18,7 +18,7 @@ export function Login() {
 						</Input.Root>
 						<Input.Root width="xl:w-[576px] lg:w-[576px] md:w-[576px] w-80" height="h-14">
 							<Input.Icon name="KeyRound" />
-							<Input.Content placeholder="Senha" type="email" />
+							<Input.Content placeholder="Senha" type="password" />
 						</Input.Root>
 						<div className="w-full flex flex-col items-center justify-center gap-6">
 							<Button className="bg-blue-500 hover:bg-blue-600   text-white" size="xl">

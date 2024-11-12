@@ -13,8 +13,8 @@ export function Footer() {
 					<div className="flex flex-col  md:flex-row gap-2">
 						<p className="text-zinc-50 text-center">Feito por três mosqueteiros || Todos direitos reservados © </p>
 					</div>
-					<div className="flex flex-col gap-2 xl:items-start xl:text-left lg:items-start lg:text-left text-center  items-center">
-						<p className="text-blue-400 font-bold text-[1.5rem]">Entre em contato</p>
+					<div className="flex flex-col gap-2 xl:items-center xl:text-left lg:items-center lg:text-left text-center  items-center">
+						<p className="text-zinc-50 font-bold text-[1.5rem]">Entre em contato</p>
 						<p className="text-zinc-50">the quick fox jumps over the lazy dog</p>
 						<div className="flex gap-4">
 							<a href="#" rel="noreferrer">
