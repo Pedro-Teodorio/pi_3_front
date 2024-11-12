@@ -75,27 +75,27 @@ export default function Login() {
           className="flex flex-col items-center gap-5"
         >
           <div className="relative w-[440px]">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 transform text-neutral-500">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 transform text-neutral-400">
               <Mail />
             </span>
             <Input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="h-[60px] w-full rounded-md bg-black px-12 text-neutral-500 placeholder:text-neutral-500"
+              className="h-[60px] w-full rounded-md bg-neutral-950 px-12 text-neutral-400 placeholder:text-neutral-400"
               placeholder="E-mail"
             />
           </div>
 
           <div className="relative w-[440px]">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 transform text-neutral-500">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 transform text-neutral-400">
               <KeyRound />
             </span>
             <Input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="h-[60px] w-full rounded-md bg-black px-12 text-neutral-500 placeholder:text-neutral-500"
+              className="h-[60px] w-full rounded-md bg-neutral-950 px-12 text-neutral-400 placeholder:text-neutral-400"
               placeholder="Senha"
             />
           </div>
@@ -107,7 +107,7 @@ export default function Login() {
             {error && <p className="text-red-600">{error}</p>}
           </ButtonContainer>
 
-          <article className="flex w-full justify-center">
+          <article className="flex w-full justify-center text-sm">
             <p className="text-white">
               Não tem conta ainda?{' '}
               <span className="text-primary">
