@@ -1,13 +1,31 @@
 import { Link } from "react-router-dom";
 import Logo from "/images/logo.svg";
 import { Button } from "../ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "@/components/Icon";
+import instance from "@/api/axios";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [categorias, setCategorias] = useState([]);
 
   const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    const fetchCategorias = async () => {
+      try {
+        const response = await instance.get("/api/categorias");
+        setCategorias(response.data);
+
+        // Use o valor diretamente da resposta se quiser logar imediatamente
+        console.log("Categorias carregadas:", response.data);
+      } catch (error) {
+        console.error("Erro ao buscar categorias:", error);
+      }
+    };
+
+    fetchCategorias();
+  }, []);
 
   return (
     <header className="bg-zinc-900">
@@ -19,12 +37,16 @@ export function Header() {
         </div>
         <div className="z-20 nav-links duration-500 lg:static  absolute bg-zinc-900 lg:min-h-fit md:min-h-[30vh]  min-h-[45vh] left-0 top-[-100%] lg:w-auto w-full flex items-center px-5">
           <ul className="text-white font-semibold flex lg:flex-row flex-col lg:items-center lg:gap-[4vw] gap-8">
-            <li>
-              <Link className="hover:text-blue-400" to="#">
-                Processadores
-              </Link>
-            </li>
-            <li>
+            {categorias.slice(0, 4).map((categoria) => {
+              return (
+                <li key={categoria.id}>
+                  <Link className="hover:text-blue-400" to="#">
+                    {categoria.nome}
+                  </Link>
+                </li>
+              );
+            })}
+            {/*             <li>
               <Link className="hover:text-blue-400" to="#">
                 Placas de vídeo
               </Link>
@@ -43,7 +65,7 @@ export function Header() {
               <Link className="hover:text-blue-400" to="#">
                 Armazenamento
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="flex items-center gap-6">
