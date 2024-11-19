@@ -18,9 +18,6 @@ export function Header() {
 			try {
 				const response = await instance.get("/api/categorias");
 				setCategorias(response.data);
-
-				// Use o valor diretamente da resposta se quiser logar imediatamente
-				console.log("Categorias carregadas:", response.data);
 			} catch (error) {
 				console.error("Erro ao buscar categorias:", error);
 			}
