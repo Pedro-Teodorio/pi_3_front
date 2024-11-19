@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 export function ShopCartProduct({ product, add, remove , removeOne}) {
 	return (
-		<Card className="flex xl:flex-row lg:flex-row md:flex-row flex-col gap-10 p-4  ">
+		<Card className="flex xl:flex-row lg:flex-row md:flex-row flex-col gap-10 p-4 bg-zinc-50  ">
 			<div className="xl:w-32 xl:h-32 lg:w-32 lg:h-32 md:h-32 md:w-32 flex items-center object-cover">
 				<CardHeader>
 					<img className="mix-blend-multiply object-cover" src={product.image} alt={product.name} />
