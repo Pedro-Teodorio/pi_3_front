@@ -12,18 +12,14 @@ export function Login() {
 	const {
 		register,
 		handleSubmit,
+		setError,
 		formState: { errors },
 	} = useForm();
 
- 
-
-
 	const handleLogin = async (e) => {
-
-		const { email, password } = e;
 		try {
+			const { email, password } = e;
 			const response = await instance.post("/api/login", { email, password });
-
 			if (response.status === 200) {
 				const token = response.data.token;
 				localStorage.setItem("token", token);
@@ -32,20 +28,15 @@ export function Login() {
 		} catch (error) {
 			if (error.response) {
 				if (error.response.status === 401) {
-					console.error("Erro de autenticação: email ou senha inválidos.");
+					alert("Erro de autenticação: email ou senha inválidos.");
 				}
 			} else if (error.request) {
-				console.error("Servidor indisponível. Verifique sua conexão.");
+				alert("Servidor indisponível. Verifique sua conexão.");
 			} else {
-				console.error("Erro desconhecido:", error.message);
+				alert("Erro desconhecido:", error.message);
 			}
 		}
 	};
-
-  const onSubmit = (data, e) => {
-    e.preventDefault();
-    handleLogin(data);
-  };
 
 	return (
 		<Page className="flex justify-center items-center">
@@ -53,8 +44,7 @@ export function Login() {
 				<h1 className="text-3xl font-bold mt-32 text-blue-500 text-center">Inicie sessão para finalizar a compra com rapidez.</h1>
 				<div className="flex flex-col items-center justify-center gap-7 w-full">
 					<h2 className="text-2xl font-semibold text-blue-400">Inicie a sessão</h2>
-					<form className="space-y-7" onSubmit={handleSubmit(onSubmit)}>
-
+					<form className="space-y-7" onSubmit={handleSubmit(handleLogin)}>
 						<div className="space-y-2">
 							<Input.Root mode="light" width="xl:w-[576px] lg:w-[576px] md:w-[576px] w-80" height="h-14">
 								<Input.Icon name="Mail" />
@@ -85,6 +75,7 @@ export function Login() {
 							</span>
 						</div>
 					</form>
+					{errors.root?.serverError && <p>{errors.root.serverError.message}</p>}
 				</div>
 			</ContentBoxed>
 		</Page>
