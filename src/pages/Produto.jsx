@@ -3,12 +3,26 @@ import { ContentBoxed } from "@/components/template/ContentBoxed";
 import { Page } from "@/components/template/Page";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader } from "@/components/ui/card";
-import { useLocation } from "react-router-dom";
+import { useShopCart } from "@/data/hooks/useShopCart";
+import {useLocation, useNavigate } from "react-router-dom";
 
 export function Produto() {
 	let { state } = useLocation();
 	let { name, description, price, image } = state;
 	let inStock = 1;
+	const navigate = useNavigate();
+	const { addItems } = useShopCart();
+
+	const isLogged = localStorage.getItem("token") ? true : false;
+
+	const handleBuy = () => {
+		if (!isLogged) {
+			navigate("/login");
+		} else {
+			addItems(state);
+			navigate("/carrinho");
+		}
+	};
 
 	return (
 		<Page className="flex justify-center items-center">
@@ -32,7 +46,7 @@ export function Produto() {
 					<p className="text-3xl font-bold text-blue-500">R$ {price.toFixed(2)}</p>
 
 					{inStock > 0 ? (
-						<Button className="bg-blue-500 hover:bg-blue-600   text-white" size="xl">
+						<Button className="bg-blue-500 hover:bg-blue-600   text-white" size="xl" onClick={handleBuy}>
 							<Icon name="ShoppingCart" className="size-4" />
 							<p className="text-base flex items-center">Comprar</p>
 						</Button>
