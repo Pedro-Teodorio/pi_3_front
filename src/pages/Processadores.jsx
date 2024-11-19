@@ -3,13 +3,14 @@ import { ContentBoxed } from "@/components/template/ContentBoxed";
 import { Page } from "@/components/template/Page";
 import products_data from "@/data/constants/products.json";
 
+
 export function Processadores() {
 	products_data
 		.filter((product) => product.category_id === 1)
 		.map((product) => {
 			console.log(product);
 		});
-
+	
 	return (
 		<Page>
 			<ContentBoxed className="bg-zinc-50">
@@ -22,6 +23,7 @@ export function Processadores() {
 							.map((product) => (
 								<ProductCard key={product.id} product={product} className="xl:w-[22%] lg:w-[49%] md:w-[45%] w-[100%]" />
 							))}
+							
 					</div>
 				</div>
 			</ContentBoxed>
