@@ -6,6 +6,7 @@ import { Produto } from "./pages/Produto";
 import { Processadores } from "./pages/Processadores";
 import { ProviderShopCart } from "./data/contexts/ContextShopCart";
 import { Carrinho } from "./pages/Carrinho";
+import { FinalizarCompra } from "./pages/FinalizarCompra";
 
 export function Router() {
 	return (
@@ -14,9 +15,10 @@ export function Router() {
 				<Route path="/" element={<Home />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/cadastrar" element={<Cadastrar />} />
-				<Route path="carrinho" element={<Carrinho />} />
 				<Route path="/produto/:id/:name" element={<Produto />} />
 				<Route path="/processadores" element={<Processadores />} />
+				<Route path="/carrinho" element={<Carrinho />} />
+				<Route path="/finalizar" element={<FinalizarCompra />} />
 			</Routes>
 		</ProviderShopCart>
 	);

@@ -5,9 +5,15 @@ import { Page } from "@/components/template/Page";
 import { TotalShopCart } from "@/components/TotalShopCart";
 import { Button } from "@/components/ui/button";
 import { useShopCart } from "@/data/hooks/useShopCart";
+import { useNavigate } from "react-router-dom";
 
 export function Carrinho() {
 	const { items, addItems, removeItems, removeOneItem } = useShopCart();
+    const navigate = useNavigate();
+
+    const handleFinalizarCompra = () => {
+        navigate('/finalizar');
+    }
 	return (
 		<Page className="flex flex-col justify-center items-center">
 			{items.length === 0 ? (
@@ -27,7 +33,7 @@ export function Carrinho() {
 						})}
 					</ContentBoxed>
 					<ContentBoxed className="my-8 flex">
-						<Button className="bg-sky-500 hover:bg-sky-600 text-white font-bold p-4 mx-auto" size="xl">
+						<Button className="bg-sky-500 hover:bg-sky-600 text-white font-bold p-4 mx-auto" size="xl" onClick={handleFinalizarCompra}>
 							Finalizar Compra
 						</Button>
 					</ContentBoxed>
