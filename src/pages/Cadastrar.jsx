@@ -42,9 +42,9 @@ export function Cadastrar() {
 				password,
 			})
 			.then((response) => {
-				console.log("Usuário cadastrado:", response.data);
+				const token = response.data.token;
+				localStorage.setItem("token", token);
 				// Redireciona para a página de login
-				window.location.href = "/login";
 			})
 			.catch((error) => {
 				console.error("Erro ao cadastrar usuário:", error);

@@ -14,9 +14,14 @@ export function Header() {
 	const navigate = useNavigate();
 
 	const token = localStorage.getItem("token");
+	
 	const removeToken = () => {
 		localStorage.removeItem("token");
 		navigate("/");
+	};
+
+	const profileRedirect = () => {
+		navigate("/perfil");
 	};
 
 	useEffect(() => {
@@ -71,7 +76,9 @@ export function Header() {
 							<DropdownMenuContent className="bg-zinc-900 border-0 text-white hover:text-sky-500">
 								<DropdownMenuLabel className="text-white">Minha conta</DropdownMenuLabel>
 								<DropdownMenuSeparator className="bg-white" />
-								<DropdownMenuItem className="text-white hover:text-sky-500 font-bold">Perfil</DropdownMenuItem>
+								<DropdownMenuItem onClick={profileRedirect} className="text-white hover:text-sky-500 font-bold">
+									Perfil
+								</DropdownMenuItem>
 								<DropdownMenuItem onClick={removeToken} className="text-white hover:text-sky-500 font-bold">
 									Sair
 								</DropdownMenuItem>
