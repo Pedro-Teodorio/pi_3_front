@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Icon } from "@/components/Icon";
 import instance from "@/api/axios";
 import { useShopCart } from "@/data/hooks/useShopCart";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 export function Header() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -59,11 +60,19 @@ export function Header() {
 						</div>
 					</Link>
 					{token ? (
-						<Link to={"/login"}>
-							<Icon name="User" className="text-zinc-50 size-8" />
-						</Link>
+						<DropdownMenu>
+							<DropdownMenuTrigger className="outline-none ">
+								<Icon name="User" className="text-zinc-50 size-8" />
+							</DropdownMenuTrigger>
+							<DropdownMenuContent className="bg-zinc-900 border-0">
+								<DropdownMenuLabel className="text-white">Minha conta</DropdownMenuLabel>
+								<DropdownMenuSeparator className="bg-white" />
+								<DropdownMenuItem className="text-white">Perfil</DropdownMenuItem>
+								<DropdownMenuItem className="text-white">Sair</DropdownMenuItem>
+							</DropdownMenuContent>
+						</DropdownMenu>
 					) : (
-						<Button className="bg-blue-500 hover:bg-blue-600  text-white rounded-xl" onClick={() => (navigate("/login"))}>
+						<Button className="bg-blue-500 hover:bg-blue-600  text-white rounded-xl" onClick={() => navigate("/login")}>
 							Entrar
 						</Button>
 					)}
