@@ -1,16 +1,17 @@
 import { ProductCard } from "@/components/ProductCard";
 import { ContentBoxed } from "@/components/template/ContentBoxed";
 import { Page } from "@/components/template/Page";
-import products_data from "@/data/constants/products.json";
-
+import { getProducts } from "@/api/endpoints";
+import { useEffect, useState } from "react";
 
 export function Processadores() {
-	products_data
-		.filter((product) => product.category_id === 1)
-		.map((product) => {
-			console.log(product);
+	const [products, setProducts] = useState([]);
+	useEffect(() => {
+		getProducts().then((data) => {
+			setProducts(data);
 		});
-	
+	}, []);
+
 	return (
 		<Page>
 			<ContentBoxed className="bg-zinc-50">
@@ -18,12 +19,11 @@ export function Processadores() {
 				<div className="flex gap-4 ">
 					<div className="col-span-1 bg-gray-200 w-auto ">Processador 1</div>
 					<div className="flex flex-wrap gap-4 ">
-						{products_data
+						{products
 							.filter((product) => product.category_id === 1)
 							.map((product) => (
 								<ProductCard key={product.id} product={product} className="xl:w-[22%] lg:w-[49%] md:w-[45%] w-[100%]" />
 							))}
-							
 					</div>
 				</div>
 			</ContentBoxed>

@@ -8,8 +8,8 @@ import {useLocation, useNavigate } from "react-router-dom";
 
 export function Produto() {
 	let { state } = useLocation();
-	let { name, description, price, image } = state;
-	let inStock = 1;
+	let { name, description, price, image, stock } = state;
+	let inStock = stock;
 	const navigate = useNavigate();
 	const { addItems } = useShopCart();
 
@@ -43,7 +43,7 @@ export function Produto() {
 						<p className=" text-gray-500 ">{description}</p>
 					</div>
 					{inStock > 0 ? <p className="text-blue-900 font-extrabold">Produto disponivel</p> : <p className="text-red-500 font-extrabold">Produto indisponivel</p>}
-					<p className="text-3xl font-bold text-blue-500">R$ {price.toFixed(2)}</p>
+					<p className="text-3xl font-bold text-blue-500">R$ {price}</p>
 
 					{inStock > 0 ? (
 						<Button className="bg-blue-500 hover:bg-blue-600   text-white" size="xl" onClick={handleBuy}>

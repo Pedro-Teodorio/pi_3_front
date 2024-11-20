@@ -19,7 +19,7 @@ export function ProductCard({ product, className }) {
 				</div>
 				<CardContent className="flex flex-col gap-4 p-0">
 					<p className="font-extrabold text-zinc-700 text-sm">{name}</p>
-					<CardTitle className="text-xl text-sky-500 font-bold text-[20px]">R$ {price.toFixed(2)}</CardTitle>
+					<CardTitle className="text-xl text-sky-500 font-bold text-[20px]">R$ {price}</CardTitle>
 				</CardContent>
 			</Link>
 			<Button className="w-full mt-4 bg-sky-500 hover:bg-sky-600 flex items-center justify-between gap-4 text-white rounded-xl font-bold " onClick={()=> addItems(product)}>
@@ -34,7 +34,7 @@ ProductCard.propTypes = {
 	product: PropTypes.shape({
 		id: PropTypes.number.isRequired,
 		name: PropTypes.string.isRequired,
-		price: PropTypes.number.isRequired,
+		price: PropTypes.string.isRequired,
 		image: PropTypes.string.isRequired,
 	}).isRequired,
 	className: PropTypes.string,

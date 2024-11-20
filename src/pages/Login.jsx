@@ -7,14 +7,16 @@ import { Page } from "@/components/template/Page";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
 	const {
 		register,
 		handleSubmit,
-		setError,
 		formState: { errors },
 	} = useForm();
+
+	const navigate = useNavigate();
 
 	const handleLogin = async (e) => {
 		try {
@@ -23,7 +25,7 @@ export function Login() {
 			if (response.status === 200) {
 				const token = response.data.token;
 				localStorage.setItem("token", token);
-				window.location.href = "/";
+				navigate("/");
 			}
 		} catch (error) {
 			if (error.response) {

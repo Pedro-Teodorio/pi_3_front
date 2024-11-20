@@ -1,11 +1,19 @@
 import { ArrowRight } from "lucide-react";
 import { Icon } from "@/components/Icon";
 import { Link } from "react-router-dom";
-import products_data from "@/data/constants/products.json";
+
 import { ProductCard } from "@/components/ProductCard";
 import PropTypes from "prop-types";
+import {getProducts} from "@/api/endpoints";
+import { useEffect, useState } from "react";
 
 export function ProductCategorySection({ category_id, category_name }) {
+	const [products, setProducts] = useState([]);
+	useEffect(() => {
+		getProducts().then((data) => {
+			setProducts(data);
+		})
+	}, []);
 	return (
 		<section className="flex flex-col gap-y-4">
 			<div className="flex justify-between items-center py-4">
@@ -19,8 +27,8 @@ export function ProductCategorySection({ category_id, category_name }) {
 				</Link>
 			</div>
 			<div className="flex flex-wrap lg:justify-between md:justify-center justify-center gap-4">
-				{products_data
-					.filter((product) => product.category_id === category_id)
+				{products
+					.filter((product) => product.category_id === category_id && product.stock > 0)
 					.slice(0, 4)
 					.map((product) => (
 						<ProductCard key={product.id} product={product} />

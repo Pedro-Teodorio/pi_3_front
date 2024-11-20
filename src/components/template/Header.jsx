@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "/images/logo.svg";
 import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
@@ -10,6 +10,7 @@ export function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [categorias, setCategorias] = useState([]);
 	const { quantityItems } = useShopCart();
+	const navigate = useNavigate();
 
 	const token = localStorage.getItem("token");
 
@@ -62,7 +63,7 @@ export function Header() {
 							<Icon name="User" className="text-zinc-50 size-8" />
 						</Link>
 					) : (
-						<Button className="bg-blue-500 hover:bg-blue-600  text-white rounded-xl" onClick={() => (window.location.href = "/login")}>
+						<Button className="bg-blue-500 hover:bg-blue-600  text-white rounded-xl" onClick={() => (navigate("/login"))}>
 							Entrar
 						</Button>
 					)}

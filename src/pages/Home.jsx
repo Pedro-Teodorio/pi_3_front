@@ -8,6 +8,8 @@ import { ContentBoxed } from "@/components/template/ContentBoxed";
 import { ProductCategorySection } from "@/components/ProductCategorySection";
 
 export default function Home() {
+	
+	
 	return (
 		<Page>
 			<HeroBanner />
