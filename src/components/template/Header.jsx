@@ -14,6 +14,10 @@ export function Header() {
 	const navigate = useNavigate();
 
 	const token = localStorage.getItem("token");
+	const removeToken = () => {
+		localStorage.removeItem("token");
+		navigate("/");
+	};
 
 	useEffect(() => {
 		const fetchCategorias = async () => {
@@ -64,11 +68,13 @@ export function Header() {
 							<DropdownMenuTrigger className="outline-none ">
 								<Icon name="User" className="text-zinc-50 size-8" />
 							</DropdownMenuTrigger>
-							<DropdownMenuContent className="bg-zinc-900 border-0">
+							<DropdownMenuContent className="bg-zinc-900 border-0 text-white hover:text-sky-500">
 								<DropdownMenuLabel className="text-white">Minha conta</DropdownMenuLabel>
 								<DropdownMenuSeparator className="bg-white" />
-								<DropdownMenuItem className="text-white">Perfil</DropdownMenuItem>
-								<DropdownMenuItem className="text-white">Sair</DropdownMenuItem>
+								<DropdownMenuItem className="text-white hover:text-sky-500 font-bold">Perfil</DropdownMenuItem>
+								<DropdownMenuItem onClick={removeToken} className="text-white hover:text-sky-500 font-bold">
+									Sair
+								</DropdownMenuItem>
 							</DropdownMenuContent>
 						</DropdownMenu>
 					) : (
