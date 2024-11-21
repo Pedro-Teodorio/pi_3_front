@@ -1,4 +1,4 @@
-import { addShopCart } from "@/api/endpoints";
+import { addShopCart, removeShopCart } from "@/api/endpoints";
 import PropTypes from "prop-types";
 import { createContext, useState } from "react";
 
@@ -19,7 +19,7 @@ export function ProviderShopCart({ children }) {
 			setItems(updatedItems);
 		}
 		const quantity = updatedItems.find((item) => item.id === product.id).quantity;
-		addShopCart(product, quantity);
+		addShopCart(product.id, quantity);
 	};
 
 	const removeItems = (product) => {
@@ -32,11 +32,14 @@ export function ProviderShopCart({ children }) {
 			})
 			.filter((item) => item.quantity > 0);
 		setItems(newItems);
+		const quantity = newItems.find((item) => item.id === product.id)?.quantity || 0;
+		addShopCart(product.id, quantity);
 	};
 
 	const removeOneItem = (product) => {
 		const newItems = items.filter((item) => item.id !== product.id);
 		setItems(newItems);
+		removeShopCart(product.id);
 	};
 
 	return (

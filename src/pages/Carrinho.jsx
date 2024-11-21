@@ -6,20 +6,32 @@ import { TotalShopCart } from "@/components/TotalShopCart";
 import { Button } from "@/components/ui/button";
 import { useShopCart } from "@/data/hooks/useShopCart";
 import { useNavigate } from "react-router-dom";
+import { getShopCart } from "@/api/endpoints";
+import { useEffect, useState } from "react";
 
 export function Carrinho() {
 	const { items, addItems, removeItems, removeOneItem } = useShopCart();
-    const navigate = useNavigate();
+	const navigate = useNavigate();
 
-    const handleFinalizarCompra = () => {
-        navigate('/finalizar');
-    }
+	const handleFinalizarCompra = () => {
+		navigate("/finalizar");
+	};
+
+	const [shopCart, setShopCart] = useState([]);
+
+	useEffect(() => {
+		getShopCart().then((data) => {
+			setShopCart(data);
+		});
+	}, []);
+
+	console.log("Carrinho", shopCart);
 	return (
 		<Page className="flex flex-col justify-center items-center">
 			{items.length === 0 ? (
-				<ContentBoxed className="" >
-                    <EmptyShopCart />
-                </ContentBoxed>
+				<ContentBoxed className="">
+					<EmptyShopCart />
+				</ContentBoxed>
 			) : (
 				<>
 					<TotalShopCart items={items} />
