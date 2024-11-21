@@ -23,7 +23,7 @@ export function Carrinho() {
 		getShopCart().then((data) => {
 			setShopCart(data);
 		});
-	}, [shopCart]);
+	}, []);
 
 	console.log("Carrinho", shopCart);
 	return (
