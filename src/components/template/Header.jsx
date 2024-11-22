@@ -38,7 +38,7 @@ export function Header() {
 		};
 
 		fetchCategorias();
-	}, [categorias]);
+	}, []);
 
 	return (
 		<header className="bg-zinc-900">
