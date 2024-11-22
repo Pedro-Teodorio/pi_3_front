@@ -8,7 +8,7 @@ export function Perfil() {
 		getAddresses().then((data) => {
 			setAddresses(data);
 		});
-	}, []);
+	}, [addresses]);
 
 	console.log(addresses);
 	return (

@@ -13,7 +13,7 @@ export function ProductCategorySection({ category_id, category_name }) {
 		getProducts().then((data) => {
 			setProducts(data);
 		})
-	}, []);
+	}, [products]);
 	return (
 		<section className="flex flex-col gap-y-4">
 			<div className="flex justify-between items-center py-4">
