@@ -10,7 +10,7 @@ export function Processadores() {
 		getProducts().then((data) => {
 			setProducts(data);
 		});
-	}, [products]);
+	}, []);
 
 	return (
 		<Page>
