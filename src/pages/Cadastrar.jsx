@@ -6,6 +6,7 @@ import { Page } from "@/components/template/Page";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 export function Cadastrar() {
 	const {
@@ -19,6 +20,7 @@ export function Cadastrar() {
 
 	const password = watch("password");
 	const confirmPassword = watch("confirmPassword");
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		if (password && confirmPassword && password !== confirmPassword) {
@@ -44,7 +46,7 @@ export function Cadastrar() {
 			.then((response) => {
 				const token = response.data.token;
 				localStorage.setItem("token", token);
-				// Redireciona para a página de login
+				navigate("/perfil");
 			})
 			.catch((error) => {
 				console.error("Erro ao cadastrar usuário:", error);

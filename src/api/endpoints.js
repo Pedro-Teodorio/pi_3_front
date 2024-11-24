@@ -89,3 +89,58 @@ export const getShopCart = async () => {
 		console.error(error);
 	}
 };
+
+export const getCategories = async () => {
+	try {
+		const response = await instace.get("api/categorias");
+		const data = response.data;
+		return data;
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+export const addAddress = async (adress) => {
+	try {
+		const response = await instace.post("api/endereco", adress, {
+			headers: {
+				Authorization: `Bearer ${localStorage.getItem("token")}`,
+			},
+		});
+		const data = response;
+
+		return data;
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+export const editAddress = async (address,id) => {
+	console.log(address)
+	console.log(id)
+	try {
+		const response = await instace.put(`api/endereco/${id}`, address, {
+			headers: {
+				Authorization: `Bearer ${localStorage.getItem("token")}`,
+			},
+		});
+		const data = response;
+		return data;
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+export const removeAddress = async (address_id) => {
+	try {
+		const response = await instace.delete(`api/endereco/${address_id}`, {
+			headers: {
+				Authorization: `Bearer ${localStorage.getItem("token")}`,
+			},
+		});
+		const data = response;
+		return data;
+	} catch (error) {
+		console.error(error);
+	}
+};
