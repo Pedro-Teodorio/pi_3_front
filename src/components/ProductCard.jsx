@@ -18,7 +18,6 @@ export function ProductCard({ product, categoryName, className }) {
         to={`/produto/${id}/${nameUrl}`}
         state={product}
       >
-        {/* Imagem com tamanho fixo */}
         <div className="h-52 w-full overflow-hidden rounded-lg">
           <CardHeader className="h-full w-full">
             <img
@@ -28,7 +27,7 @@ export function ProductCard({ product, categoryName, className }) {
             />
           </CardHeader>
         </div>
-        {/* Conteúdo */}
+
         <CardContent className="flex flex-col items-center gap-4">
           <p className="text-lg font-semibold text-gray-800">{name}</p>
           <p className="text-sm text-gray-500">{categoryName}</p>
@@ -37,7 +36,7 @@ export function ProductCard({ product, categoryName, className }) {
           </CardTitle>
         </CardContent>
       </Link>
-      {/* Botão */}
+
       <Button
         className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-blue-500 px-6 py-3 text-lg text-white hover:bg-blue-600"
         onClick={() => addItems(product)}

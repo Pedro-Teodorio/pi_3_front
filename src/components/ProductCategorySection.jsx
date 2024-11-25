@@ -20,7 +20,7 @@ export function ProductCategorySection({ category_id, category_name }) {
           {category_name}
         </h2>
         <Link
-          to={`/${encodeURIComponent(category_name)}`}
+          to={'/allProducts'}
           className="flex items-center gap-2 text-xl font-semibold text-blue-500"
         >
           Ver mais
@@ -35,7 +35,11 @@ export function ProductCategorySection({ category_id, category_name }) {
           )
           .slice(0, 4)
           .map((product) => (
-            <ProductCard key={product.id} product={product} categoryName={category_name} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              categoryName={category_name}
+            />
           ))}
       </div>
     </section>
