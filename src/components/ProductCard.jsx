@@ -11,7 +11,7 @@ export function ProductCard({ product, categoryName, className }) {
   const nameUrl = name.toLowerCase().replace(/[, ]+/g, '-');
   return (
     <Card
-      className={`flex flex-col items-center rounded-lg bg-white p-6 shadow-lg ${className} h-auto w-80 sm:w-72 md:w-80`}
+      className={`flex flex-col items-center rounded-3xl bg-white p-6 shadow-lg ${className} h-auto w-80 sm:w-72 md:w-80`}
     >
       <Link
         className="flex h-full flex-col items-center gap-6 text-center"
@@ -39,7 +39,7 @@ export function ProductCard({ product, categoryName, className }) {
       </Link>
       {/* Botão */}
       <Button
-        className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg bg-blue-500 px-6 py-3 text-lg text-white hover:bg-blue-600"
+        className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-blue-500 px-6 py-3 text-lg text-white hover:bg-blue-600"
         onClick={() => addItems(product)}
       >
         Adicionar ao carrinho
