@@ -19,6 +19,7 @@ export function Router() {
 				<Route path="/perfil" element={<Perfil />} />
 				<Route path="/produto/:id/:name" element={<Produto />} />
 				<Route path="/processadores" element={<Processadores />} />
+				<Route path="/placadevideo" element={<Processadores />} />
 				<Route path="/carrinho" element={<Carrinho />} />
 				<Route path="/finalizar" element={<FinalizarCompra />} />
 			</Routes>
