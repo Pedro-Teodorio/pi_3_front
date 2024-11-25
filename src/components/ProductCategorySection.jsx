@@ -1,11 +1,9 @@
-import { ArrowRight } from "lucide-react";
-import { Icon } from "@/components/Icon";
-import { Link } from "react-router-dom";
-
-import { ProductCard } from "@/components/ProductCard";
-import PropTypes from "prop-types";
-import { getProducts } from "@/api/endpoints";
-import { useEffect, useState } from "react";
+import { ArrowRight } from 'lucide-react';
+import { Icon } from '@/components/Icon';
+import { Link } from 'react-router-dom';
+import { ProductCard } from '@/components/ProductCard';
+import { getProducts } from '@/api/endpoints';
+import { useEffect, useState } from 'react';
 
 export function ProductCategorySection({ category_id, category_name }) {
   const [products, setProducts] = useState([]);
@@ -16,20 +14,20 @@ export function ProductCategorySection({ category_id, category_name }) {
   }, []);
   return (
     <section className="flex flex-col gap-y-4">
-      <div className="flex justify-between items-center py-4 px-20">
-        <h2 className="text-xl font-bold flex items-center gap-4">
-          <Icon name="ShoppingBag" className="text-blue-500 font-bold" />
+      <div className="flex items-center justify-between px-20 py-4">
+        <h2 className="flex items-center gap-4 text-xl font-bold">
+          <Icon name="ShoppingBag" className="font-bold text-blue-500" />
           {category_name}
         </h2>
         <Link
           to={`/${encodeURIComponent(category_name)}`}
-          className="text-blue-500 text-xl font-semibold flex items-center gap-2"
+          className="flex items-center gap-2 text-xl font-semibold text-blue-500"
         >
           Ver mais
           <ArrowRight className="size-6 font-semibold" />
         </Link>
       </div>
-      <div className="flex flex-wrap lg:justify-around md:justify-center justify-center gap-4">
+      <div className="flex flex-wrap justify-center gap-4 md:justify-center lg:justify-around">
         {products
           .filter(
             (product) =>
@@ -37,14 +35,9 @@ export function ProductCategorySection({ category_id, category_name }) {
           )
           .slice(0, 4)
           .map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} categoryName={category_name} />
           ))}
       </div>
     </section>
   );
 }
-
-ProductCategorySection.propTypes = {
-  category_id: PropTypes.number.isRequired,
-  category_name: PropTypes.string.isRequired,
-};

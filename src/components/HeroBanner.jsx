@@ -1,15 +1,20 @@
-import ImageBanner from "/images/image_banner.png";
+import ImageBanner from '/images/image_banner.png';
 export function HeroBanner() {
-	return (
-		<div className="hero-banner  bg-gradient-to-b from-zinc-900 via-neutral-500 to-zinc-100 text-white ">
-			<div className="max-w-screen-2xl mx-auto flex flex-wrap  items-center justify-center">
-				<div className="flex-1 p-4 lg:mt-10 md:mt-10 mt-10 xl:text-left lg:text-center md:text-center text-center">
-					<h1 className="text-4xl font-bold mb-4 ">LEVEL UP!</h1>
-					<p className="text-lg font-thin mb-8">Descubra o melhor hardware de jogos para elevar sua experiência de jogo ao próximo nível.</p>
-					<button className="bg-blue-600 text-white font-bold py-2 px-4 rounded-xl hover:bg-blue-500 transition duration-300">Compre Agora</button>
-				</div>
-				<img src={ImageBanner} alt="banner" className="object-cover" />
-			</div>
-		</div>
-	);
+  return (
+    <div className="hero-banner bg-gradient-to-b from-zinc-900 via-neutral-500 to-zinc-100 text-white">
+      <div className="mx-auto flex max-w-screen-2xl flex-wrap items-center justify-center">
+        <div className="mt-10 flex-1 p-4 text-center md:mt-10 md:text-center lg:mt-10 lg:text-center xl:text-left">
+          <h1 className="mb-4 text-4xl font-bold">LEVEL UP!</h1>
+          <p className="mb-8 text-lg font-thin">
+            Descubra o melhor hardware de jogos para elevar sua experiência de
+            jogo ao próximo nível.
+          </p>
+          <button className="rounded-xl bg-blue-600 px-4 py-2 font-bold text-white transition duration-300 hover:bg-blue-500">
+            Compre Agora
+          </button>
+        </div>
+        <img src={ImageBanner} alt="banner" className="object-cover" />
+      </div>
+    </div>
+  );
 }
