@@ -18,10 +18,10 @@ export function ProductCard({ product, categoryName, className }) {
         to={`/produto/${id}/${nameUrl}`}
         state={product}
       >
-        <div className="h-52 w-full overflow-hidden rounded-lg">
+        <div className="h-52 overflow-hidden rounded-lg">
           <CardHeader className="h-full w-full">
             <img
-              className="h-full w-full object-cover"
+              className="h-full object-cover"
               src={image}
               alt={name}
             />

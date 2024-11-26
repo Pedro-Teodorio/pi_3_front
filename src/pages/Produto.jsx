@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader } from '@/components/ui/card';
 import { useShopCart } from '@/data/hooks/useShopCart';
 import { useLocation, useNavigate } from 'react-router-dom';
-
 export function Produto() {
   let { state } = useLocation();
   let { name, description, price, image, stock } = state;
@@ -30,9 +29,9 @@ export function Produto() {
         <div className="w-full md:w-[80%] lg:w-[65%] xl:w-[40%]">
           <Card className="flex h-[520px] w-full items-center justify-center">
             <div className="flex h-96 w-96 items-center">
-              <CardHeader className="h-[500px] w-[500px]">
+              <CardHeader>
                 <img
-                  className="h-full w-full object-contain mix-blend-multiply"
+                  className="object-cover mix-blend-multiply"
                   src={image}
                   alt={name}
                 />
