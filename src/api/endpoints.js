@@ -11,9 +11,9 @@ export const getProducts = async () => {
         name: product.nome,
         description: product.desc,
         price: Number(product.preco).toFixed(2),
-        image: product.imagens[0].img_url,
+        image: product.imagens[0]?.img_url,
         category_id: product.categoriaId,
-        stock: product.estoque[0].produto_qtd,
+        stock: product.estoque[0]?.produto_qtd,
       });
     });
     return arrProducts;
