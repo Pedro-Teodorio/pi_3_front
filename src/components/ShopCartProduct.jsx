@@ -5,10 +5,10 @@ import { Card, CardContent, CardHeader } from './ui/card';
 export function ShopCartProduct({ product, add, remove, removeOne }) {
   return (
     <Card className="flex flex-col gap-10 bg-zinc-50 p-4 md:flex-row lg:flex-row xl:flex-row">
-      <div className="flex items-center object-cover md:h-32 md:w-32 lg:h-32 lg:w-32 xl:h-32 xl:w-32">
-        <CardHeader>
+      <div className="flex items-center justify-center h-48 w-48 md:h-48 md:w-48 lg:h-48 lg:w-48 xl:h-48 xl:w-48">
+        <CardHeader className="h-full w-full">
           <img
-            className="object-cover mix-blend-multiply"
+            className="object-cover h-full w-full mix-blend-multiply"
             src={product.image}
             alt={product.name}
           />
