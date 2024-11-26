@@ -30,9 +30,9 @@ export function Produto() {
         <div className="w-full md:w-[80%] lg:w-[65%] xl:w-[40%]">
           <Card className="flex h-[520px] w-full items-center justify-center">
             <div className="flex h-96 w-96 items-center">
-              <CardHeader>
+              <CardHeader className="h-[500px] w-[500px]">
                 <img
-                  className="object-cover mix-blend-multiply"
+                  className="h-full w-full object-contain mix-blend-multiply"
                   src={image}
                   alt={name}
                 />
