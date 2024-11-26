@@ -7,7 +7,7 @@ import { Processadores } from "./pages/Processadores";
 import { ProviderShopCart } from "./data/contexts/ContextShopCart";
 import { Carrinho } from "./pages/Carrinho";
 import { FinalizarCompra } from "./pages/FinalizarCompra";
-import { Perfil } from "./pages/Perfil";
+import { Perfil } from "./pages/Perifl";
 
 export function Router() {
 	return (
@@ -16,7 +16,7 @@ export function Router() {
 				<Route path="/" element={<Home />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/cadastrar" element={<Cadastrar />} />
-				<Route path="/perfil" element={<Perfil />} />
+				<Route path="/perfil/:name" element={<Perfil />} />
 				<Route path="/produto/:id/:name" element={<Produto />} />
 				<Route path="/processadores" element={<Processadores />} />
 				<Route path="/carrinho" element={<Carrinho />} />

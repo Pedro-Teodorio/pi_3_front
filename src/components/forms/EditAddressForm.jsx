@@ -67,7 +67,7 @@ export function EditAdressForm({ setIsOpen, onAddressEdited, cep_address }) {
 			if (response.status === 200) {
 				setIsOpen(false);
 				onAddressEdited();
-				navigate("/perfil");
+				navigate("/perfil/endereco");
 			} else {
 				console.log("Erro ao adicionar o endereço ao banco de dados", response.status);
 			}

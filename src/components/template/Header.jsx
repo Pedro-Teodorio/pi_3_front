@@ -21,7 +21,7 @@ export function Header() {
 	};
 
 	const profileRedirect = () => {
-		navigate("/perfil");
+		navigate("/perfil/informacoes-pessoais");
 	};
 
 	useEffect(() => {

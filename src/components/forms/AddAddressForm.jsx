@@ -60,7 +60,7 @@ export function AddAdressesForm({ setIsOpen, onAddressAdded }) {
 			if (response.status === 201) {
 				setIsOpen(false);
 				onAddressAdded();
-				navigate("/perfil");
+				navigate("/perfil/endereco");
 			} else {
 				console.log("Erro ao adicionar o endereço ao banco de dados", response.status);
 			}

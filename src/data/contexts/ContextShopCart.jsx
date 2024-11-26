@@ -42,6 +42,11 @@ export function ProviderShopCart({ children }) {
 		removeShopCart(product.id);
 	};
 
+	const clearCart = () => {
+        setItems([]);
+    };
+
+
 	return (
 		<ContextShopCart.Provider
 			value={{
@@ -49,6 +54,7 @@ export function ProviderShopCart({ children }) {
 				addItems,
 				removeItems,
 				removeOneItem,
+				clearCart,
 				get quantityItems() {
 					return items.reduce((acc, item) => acc + item.quantity, 0);
 				},
