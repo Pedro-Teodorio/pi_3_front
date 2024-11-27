@@ -10,6 +10,7 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
         frijole: ['Frijole', 'system-ui'],
+        creepster: ['Creepster', 'system-ui'],
       },
       backgroundImage: {
         'hero-banner': "url('../../public/images/Banner.png')",

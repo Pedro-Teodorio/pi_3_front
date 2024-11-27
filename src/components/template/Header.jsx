@@ -3,7 +3,6 @@ import Logo from '/images/logo.svg';
 import { Button } from '../ui/button';
 import { useEffect, useState } from 'react';
 import { Icon } from '@/components/Icon';
-import instance from '@/api/axios';
 import { useShopCart } from '@/data/hooks/useShopCart';
 import {
   DropdownMenu,
@@ -13,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { getCategories } from '@/api/endpoints';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,18 +32,9 @@ export function Header() {
   };
 
   useEffect(() => {
-    const fetchCategorias = async () => {
-      try {
-        const response = await instance.get('/api/categorias');
-        setCategorias(response.data);
-
-        // Use o valor diretamente da resposta se quiser logar imediatamente
-      } catch (error) {
-        console.error('Erro ao buscar categorias:', error);
-      }
-    };
-
-    fetchCategorias();
+    getCategories().then((data) => {
+      setCategorias(data);
+    });
   }, []);
 
   return (
@@ -59,7 +50,10 @@ export function Header() {
             {categorias.slice(0, 4).map((categoria) => {
               return (
                 <li key={categoria.id}>
-                  <Link className="hover:text-blue-400" to="#">
+                  <Link
+                    className="hover:text-blue-400"
+                    to={`/allProducts?category_id=${categoria.id}`}
+                  >
                     {categoria.nome}
                   </Link>
                 </li>

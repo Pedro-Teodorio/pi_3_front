@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ImageBanner from '/images/image_banner.png';
 export function HeroBanner() {
   return (
@@ -10,7 +11,7 @@ export function HeroBanner() {
             jogo ao próximo nível.
           </p>
           <button className="rounded-xl bg-blue-600 px-4 py-2 font-bold text-white transition duration-300 hover:bg-blue-500">
-            Compre Agora
+            <Link to={'/allProducts'}>Compre Agora</Link>
           </button>
         </div>
         <img src={ImageBanner} alt="banner" className="object-cover" />

@@ -20,7 +20,7 @@ export function ProductCategorySection({ category_id, category_name }) {
           {category_name}
         </h2>
         <Link
-          to={'/allProducts'}
+          to={`/allProducts?category_id=${category_id}`}
           className="flex items-center gap-2 text-xl font-semibold text-blue-500"
         >
           Ver mais
