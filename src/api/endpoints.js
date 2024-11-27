@@ -14,6 +14,20 @@ export const getUser = async () => {
 	}
 };
 
+export const editUser = async (user) => {
+	try {
+		const response = await instace.put("api/user", user, {
+			headers: {
+				Authorization: `Bearer ${localStorage.getItem("token")}`,
+			},
+		});
+		const data = response;
+		return data;
+	} catch (error) {
+		console.error(error);
+	}
+}
+
 export const getProducts = async () => {
 	try {
 		let arrProducts = [];

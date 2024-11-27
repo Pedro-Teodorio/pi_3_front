@@ -13,8 +13,8 @@ export function ProductCard({ product, className }) {
 		<Card className={`xl:w-[23%] lg:w-[49%] md:w-[45%] w-[100%] p-4 flex flex-col items-center justify-center shadow-md ${className}`}>
 			<Link className="flex flex-col items-center justify-center" to={`/produto/${id}/${nameUrl}`} state={product}>
 				<div className=" w-72 h-72 flex items-center">
-					<CardHeader>
-						<img className="mix-blend-multiply object-cover" src={image} alt={name} />
+					<CardHeader className="mx-auto">
+						<img className="mix-blend-multiply object-cover w-full h-full" src={image} alt={name} />
 					</CardHeader>
 				</div>
 				<CardContent className="flex flex-col gap-4 p-0">
