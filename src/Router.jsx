@@ -9,6 +9,7 @@ import { Carrinho } from './pages/Carrinho';
 import { FinalizarCompra } from './pages/FinalizarCompra';
 import { Perfil } from './pages/Perfil';
 import { AllProducts } from './pages/AllProducts';
+/* import { Toaster } from './components/ui/toaster'; */
 
 export function Router() {
   return (
@@ -24,6 +25,7 @@ export function Router() {
         <Route path="/carrinho" element={<Carrinho />} />
         <Route path="/finalizar" element={<FinalizarCompra />} />
       </Routes>
+     {/*  <Toaster /> */}
     </ProviderShopCart>
   );
 }

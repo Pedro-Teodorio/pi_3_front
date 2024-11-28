@@ -5,11 +5,14 @@ import { Input } from '@/components/Input';
 import { ContentBoxed } from '@/components/template/ContentBoxed';
 import { Page } from '@/components/template/Page';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export function Login() {
+ 
+  const notify = () => toast("Wow so easy!")
+
   const {
     register,
     handleSubmit,
@@ -99,8 +102,10 @@ export function Login() {
                 <p className="ml-4 flex items-center gap-2.5 text-base">
                   Entrar
                 </p>
+
                 <Icon name="ArrowRight" className="size-4" />
               </Button>
+              <Button onClick={() => {}}>Toster</Button>
               <span className="flex gap-2 text-sm">
                 Não tem conta ainda?
                 <a
