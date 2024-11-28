@@ -39,28 +39,33 @@ export function ProviderShopCart({ children }) {
     addShopCart(product.id, quantity);
   };
 
-  const removeOneItem = (product) => {
-    const newItems = items.filter((item) => item.id !== product.id);
-    setItems(newItems);
-    removeShopCart(product.id);
-  };
+	const removeOneItem = (product) => {
+		const newItems = items.filter((item) => item.id !== product.id);
+		setItems(newItems);
+		removeShopCart(product.id);
+	};
 
-  return (
-    <ContextShopCart.Provider
-      value={{
-        items,
-        addItems,
-        removeItems,
-        removeOneItem,
-        get quantityItems() {
-          return items.reduce((acc, item) => acc + item.quantity, 0);
-        },
-      }}
-      className="border border-red-400"
-    >
-      {children}
-    </ContextShopCart.Provider>
-  );
+	const clearCart = () => {
+        setItems([]);
+    };
+
+
+	return (
+		<ContextShopCart.Provider
+			value={{
+				items,
+				addItems,
+				removeItems,
+				removeOneItem,
+				clearCart,
+				get quantityItems() {
+					return items.reduce((acc, item) => acc + item.quantity, 0);
+				},
+			}}
+			className="border border-red-400 ">
+			{children}
+		</ContextShopCart.Provider>
+	);
 }
 
 ProviderShopCart.propTypes = {

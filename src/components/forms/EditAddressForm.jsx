@@ -62,69 +62,51 @@ export function EditAdressForm({ setIsOpen, onAddressEdited, cep_address }) {
     }
   }, [cep, setValue, setError]);
 
-  const handleAddAdress = async (data) => {
-    try {
-      const response = await editAddress(data, cep_address.id);
-      if (response.status === 200) {
-        setIsOpen(false);
-        onAddressEdited();
-        navigate('/perfil');
-      } else {
-        console.log(
-          'Erro ao adicionar o endereço ao banco de dados',
-          response.status
-        );
-      }
-    } catch (error) {
-      console.error('Erro ao adicionar o endereço:', error);
-    }
-  };
-  return (
-    <form
-      onSubmit={handleSubmit(handleAddAdress)}
-      className="flex flex-col gap-4"
-    >
-      <div className="space-y-2">
-        <Input.Root width=" lg:w-full md:w-full w-full" height="h-14">
-          <Input.Icon name="LocateFixed" />
-          <Input.Content
-            placeholder="CEP"
-            type="text"
-            maxLength={8}
-            register={{
-              ...register('cep', {
-                required: 'Campo CEP é obrigatório',
-                maxLength: {
-                  value: 8,
-                  message: 'CEP deve ter 8 dígitos',
-                },
-              }),
-            }}
-          />
-        </Input.Root>
-        {errors.cep && (
-          <p className="text-sm text-red-500">{errors.cep.message}</p>
-        )}
-      </div>
-      {showFields && (
-        <>
-          <div className="space-y-2">
-            <Input.Root width=" lg:w-full md:w-full w-full" height="h-14">
-              <Input.Icon name="MapPin" />
-              <Input.Content
-                placeholder="Estado"
-                type="text"
-                register={{
-                  ...register('estado', {
-                    required: 'Campo Estado é obrigatório',
-                  }),
-                }}
-              />
-            </Input.Root>
-            {errors.estado && (
-              <p className="text-sm text-red-500">{errors.estado.message}</p>
-            )}
-          </div>
+	const handleAddAdress = async (data) => {
+		try {
+			const response = await editAddress(data, cep_address.id);
+			if (response.status === 200) {
+				setIsOpen(false);
+				onAddressEdited();
+				navigate("/perfil/endereco");
+			} else {
+				console.log("Erro ao adicionar o endereço ao banco de dados", response.status);
+			}
+		} catch (error) {
+			console.error("Erro ao adicionar o endereço:", error);
+		}
+	};
+	return (
+		<form onSubmit={handleSubmit(handleAddAdress)} className="flex flex-col gap-4">
+			<div className="space-y-2">
+				<Input.Root width=" lg:w-full md:w-full w-full" height="h-14">
+					<Input.Icon name="LocateFixed" />
+					<Input.Content
+						placeholder="CEP"
+						type="text"
+						maxLength={8}
+						register={{
+							...register("cep", {
+								required: "Campo CEP é obrigatório",
+								maxLength: {
+									value: 8,
+									message: "CEP deve ter 8 dígitos",
+								},
+							}),
+						}}
+					/>
+				</Input.Root>
+				{errors.cep && <p className="text-red-500 text-sm">{errors.cep.message}</p>}
+			</div>
+			{showFields && (
+				<>
+					<div className="space-y-2">
+						<Input.Root width=" lg:w-full md:w-full w-full" height="h-14">
+							<Input.Icon name="MapPin" />
+							<Input.Content placeholder="Estado" type="text" register={{ ...register("estado", { required: "Campo Estado é obrigatório" }) }} />
+						</Input.Root>
+						{errors.estado && <p className="text-red-500 text-sm">{errors.estado.message}</p>}
+					</div>
 
           <div className="space-y-2">
             <Input.Root width=" lg:w-full md:w-full w-full" height="h-14">

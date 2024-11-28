@@ -20,16 +20,16 @@ export function Header() {
   const { quantityItems } = useShopCart();
   const navigate = useNavigate();
 
-  const token = localStorage.getItem('token');
+	const token = localStorage.getItem("token");
 
-  const removeToken = () => {
-    localStorage.removeItem('token');
-    navigate('/');
-  };
+	const removeToken = () => {
+		localStorage.removeItem("token");
+		navigate("/");
+	};
 
-  const profileRedirect = () => {
-    navigate('/perfil');
-  };
+	const profileRedirect = () => {
+		navigate("/perfil/informacoes-pessoais");
+	};
 
   useEffect(() => {
     getCategories().then((data) => {
