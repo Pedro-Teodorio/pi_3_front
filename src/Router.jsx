@@ -7,6 +7,7 @@ import { Processadores } from "./pages/Processadores";
 import { ProviderShopCart } from "./data/contexts/ContextShopCart";
 import { Carrinho } from "./pages/Carrinho";
 import { FinalizarCompra } from "./pages/FinalizarCompra";
+import { AllProducts } from "./pages/AllProducts";
 import { Perfil } from "./pages/Perifl";
 
 export function Router() {
