@@ -15,8 +15,6 @@ export function Endereco() {
 	const fetchAddresses = async () => {
 		const data = await getAddresses();
 		setAddresses(data);
-
-		console.log("Endereços", data);
 	};
 
 	useEffect(() => {

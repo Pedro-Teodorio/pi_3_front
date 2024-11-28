@@ -9,6 +9,8 @@ import { Carrinho } from "./pages/Carrinho";
 import { FinalizarCompra } from "./pages/FinalizarCompra";
 import { AllProducts } from "./pages/AllProducts";
 import { Perfil } from "./pages/Perifl";
+import { Pedido } from "./pages/Perifl/Pedido";
+
 
 export function Router() {
   return (
@@ -18,6 +20,8 @@ export function Router() {
         <Route path="/login" element={<Login />} />
         <Route path="/cadastrar" element={<Cadastrar />} />
         <Route path="/perfil/:name" element={<Perfil />} />
+        <Route path="/perfil/:name/:pedido" element={<Pedido />} />
+        
         <Route path="/produto/:id/:name" element={<Produto />} />
         <Route path="/processadores" element={<Processadores />} />
         <Route path="/allProducts" element={<AllProducts />} />

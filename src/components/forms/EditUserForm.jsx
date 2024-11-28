@@ -32,9 +32,9 @@ export function EditUserForm({ setIsOpen, onUserEdited, user }) {
 			USUARIO_CPF: cpf,
 			USUARIO_EMAIL: email,
 		};
-		console.log(body);
+	
 		const response = editUser(body);
-		console.log(response);
+	
 		if (response) {
 			onUserEdited();
 			setIsOpen(false);

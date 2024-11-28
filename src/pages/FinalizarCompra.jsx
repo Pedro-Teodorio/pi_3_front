@@ -22,7 +22,7 @@ export function FinalizarCompra() {
 		const data = await getAddresses();
 		setAddresses(data);
 
-		console.log("Endereços", data);
+	
 	};
 
 	useEffect(() => {
@@ -34,9 +34,9 @@ export function FinalizarCompra() {
 			const response = await finishOrder(e);
 
 			if (response.status === 201) {
-				console.log("Compra finalizada com sucesso:", response.data);
+				alert("Compra finalizada com sucesso!");
 				clearCart();
-				navigate("/perfil/informacoes-pessoais");
+				navigate("/perfil/pedidos");
 			}
 		} catch (error) {
 			console.error("Erro ao finalizar a compra:", error);

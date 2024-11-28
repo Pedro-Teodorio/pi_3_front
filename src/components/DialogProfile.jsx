@@ -12,13 +12,14 @@ export function DialogProfile({
   description,
   setIsOpen,
   isOpen,
+  className
 }) {
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="bg-zinc-100">
+    <Dialog  open={isOpen} onOpenChange={setIsOpen}  >
+      <DialogContent className={`bg-zinc-100 ${className}`} >
         <DialogHeader>
           <DialogTitle className="font-bold">{title}</DialogTitle>
-          <DialogDescription className="font-semibold">
+          <DialogDescription className="font-semibold text-zinc-500">
             {description}
           </DialogDescription>
         </DialogHeader>

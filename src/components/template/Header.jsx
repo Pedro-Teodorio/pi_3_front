@@ -30,6 +30,13 @@ export function Header() {
 	const profileRedirect = () => {
 		navigate("/perfil/informacoes-pessoais");
 	};
+  const adddressRedirect = () => {
+    navigate('/perfil/endereco');
+  }
+
+  const pedidosRedirect = () => {
+    navigate('/perfil/pedidos');
+  }
 
   useEffect(() => {
     getCategories().then((data) => {
@@ -38,7 +45,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="bg-zinc-900">
+    <header className="bg-zinc-900  w-full">
       <nav className="mx-auto flex max-w-screen-2xl items-center justify-between p-4">
         <div>
           <Link to="/">
@@ -88,9 +95,24 @@ export function Header() {
                 <DropdownMenuSeparator className="bg-white" />
                 <DropdownMenuItem
                   onClick={profileRedirect}
+                  className="font-bold text-white hover:text-sky-500 text-sm text-center"
+                >
+                  <Icon name="User" className="size-4" />
+                  Informações pessoais
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={adddressRedirect}
                   className="font-bold text-white hover:text-sky-500"
                 >
-                  Perfil
+                  <Icon name="Map" />
+                  Endereço
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={pedidosRedirect} 
+                  className="font-bold text-white hover:text-sky-500"
+                >
+                  <Icon name="PackageOpen" />
+                  Pedidos
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={removeToken}

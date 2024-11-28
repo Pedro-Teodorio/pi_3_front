@@ -65,7 +65,7 @@ export function AddAdressesForm({ setIsOpen, onAddressAdded }) {
 				onAddressAdded();
 				navigate("/perfil/endereco");
 			} else {
-				console.log("Erro ao adicionar o endereço ao banco de dados", response.status);
+				console.error("Erro ao adicionar o endereço ao banco de dados", response.status);
 			}
 		} catch (error) {
 			console.error("Erro ao adicionar o endereço:", error);

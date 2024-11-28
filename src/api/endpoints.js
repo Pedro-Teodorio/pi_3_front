@@ -83,7 +83,8 @@ export const addShopCart = async (product_id, quantity) => {
       throw new Error('Erro ao adicionar produto ao carrinho');
     }
     const data = response.data;
-    console.log('Resposta da API', data);
+	return data;
+  
   } catch (error) {
     console.error('Erro ao fazer a requisição:', error);
   }
@@ -147,8 +148,7 @@ export const addAddress = async (adress) => {
 };
 
 export const editAddress = async (address, id) => {
-	console.log(address);
-	console.log(id);
+	
 	try {
 		const response = await instace.put(`api/endereco/${id}`, address, {
 			headers: {
@@ -177,7 +177,7 @@ export const removeAddress = async (address_id) => {
 };
 
 export const finishOrder = async (address_id) => {
-	console.log(address_id);
+
 	try {
 		const response = await instace.post("api/pedido/finalizar", address_id, {
 			headers: {

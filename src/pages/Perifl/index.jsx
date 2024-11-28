@@ -23,7 +23,7 @@ export function Perfil() {
 
 	const { user } = data;
 
-	console.log();
+
 
 	const renderContent = () => {
 		switch (location.pathname) {

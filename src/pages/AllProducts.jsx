@@ -12,6 +12,7 @@ import {
   DropdownMenuItem,
 } from '@radix-ui/react-dropdown-menu';
 import { Icon } from '@/components/Icon';
+import { ContentBoxed } from '@/components/template/ContentBoxed';
 
 export function AllProducts() {
   const [products, setProducts] = useState([]);
@@ -30,7 +31,7 @@ export function AllProducts() {
     const params = new URLSearchParams(location.search);
     const categoryId = params.get('category_id');
     if (categoryId) {
-      console.log(categoryId);
+    
       setSelectedCategory(Number(categoryId));
     }
   }, [location.search]);
@@ -42,8 +43,9 @@ export function AllProducts() {
   return (
     <Page>
       <div className="relative w-full">
-        <div className="flex items-center justify-between px-20 bg-gradient-to-b from-zinc-900 to-zinc-600 p-6 pt-10 text-white shadow-lg">
-          <h1 className="font-creepster text-5xl">NOSSOS PRODUTOS</h1>
+        <div className="flex items-center justify-between  bg-gradient-to-b from-zinc-900 to-zinc-600 p-6 pt-10 text-white shadow-lg">
+          <ContentBoxed className='flex justify-between'>
+          <h1 className="font-creepster xl:text-5xl lg:text-4xl md:text-xl text-xl">NOSSOS PRODUTOS</h1>
           <DropdownMenu>
             <DropdownMenuTrigger className="outline-none">
               <Icon
@@ -51,7 +53,7 @@ export function AllProducts() {
                 className="size-8 text-white hover:text-sky-500"
               />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="border-0 bg-zinc-900 text-white hover:text-sky-500">
+            <DropdownMenuContent className="border-0 bg-zinc-900 text-white hover:text-sky-500 p-2">
               <DropdownMenuLabel className="text-white">
                 Categorias
               </DropdownMenuLabel>
@@ -73,6 +75,7 @@ export function AllProducts() {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+          </ContentBoxed>
         </div>
       </div>
       <div className="my-12 flex w-full flex-wrap justify-center gap-10">

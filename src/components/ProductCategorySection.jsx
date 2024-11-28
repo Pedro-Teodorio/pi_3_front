@@ -14,7 +14,7 @@ export function ProductCategorySection({ category_id, category_name }) {
   }, []);
   return (
     <section className="flex flex-col gap-y-4">
-      <div className="flex items-center justify-between px-20 py-4">
+      <div className="flex items-center justify-between  py-4">
         <h2 className="flex items-center gap-4 text-xl font-bold">
           <Icon name="ShoppingBag" className="font-bold text-blue-500" />
           {category_name}

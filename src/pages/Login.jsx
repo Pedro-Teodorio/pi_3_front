@@ -6,7 +6,7 @@ import { ContentBoxed } from '@/components/template/ContentBoxed';
 import { Page } from '@/components/template/Page';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { set, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 export function Login() {
@@ -14,11 +14,16 @@ export function Login() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    criteriaMode: 'all',
+    mode : 'onSubmit'
+  });
 
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e,t) => {
+
+  
     try {
       const { email, password } = e;
       const response = await instance.post('/api/login', { email, password });
@@ -28,17 +33,17 @@ export function Login() {
         navigate('/');
       }
     } catch (error) {
-      if (error.response) {
-        if (error.response.status === 401) {
-          alert('Erro de autenticação: email ou senha inválidos.');
-        }
-      } else if (error.request) {
-        alert('Servidor indisponível. Verifique sua conexão.');
-      } else {
-        alert('Erro desconhecido:', error.message);
-      }
+      console.error(error);
+      
+      set('root', 'serverError', {
+        type: 'manual',
+        message: 'Email ou senha inválidos',
+      });
+      return;
     }
   };
+
+  
 
   return (
     <Page className="flex items-center justify-center">

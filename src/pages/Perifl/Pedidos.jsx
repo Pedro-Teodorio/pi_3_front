@@ -1,10 +1,14 @@
 import { getOrders } from "@/api/endpoints";
+
 import { Icon } from "@/components/Icon";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 export function Pedidos() {
 	const [pedidos, setPedidos] = useState([]);
+   const navigate = useNavigate();
 	const fetchPedidos = async () => {
 		const data = await getOrders();
 		setPedidos(data);
@@ -12,7 +16,7 @@ export function Pedidos() {
 	useEffect(() => {
 		fetchPedidos();
 	}, []);
-	console.log(pedidos);
+
 	return (
 		<div className=" flex flex-col gap-4 p-4 bg-zinc-50 xl:w-[65%] xl:flex xl:flex-col lg:w-[65%] lg:flex lg:flex-col md:w-full w-full rounded-xl ">
 			<h2 className="text-xl font-bold">Pedidos</h2>
@@ -20,7 +24,12 @@ export function Pedidos() {
 				const { itens } = pedido;
 				const formattedDate = new Date(pedido.PEDIDO_DATA).toLocaleDateString("pt-BR");
 				return (
-					<Card key={pedido.PEDIDO_ID} className="flex xl:flex-row lg:flex-row md:flex-row flex-col gap-2 p-4 bg-zinc-50 ">
+					<Card onClick={()=>{
+                        navigate(`/perfil/pedidos/FLPP${pedido.PEDIDO_ID}`,{
+                            state: {pedido}
+                        });
+                       
+                    }} key={pedido.PEDIDO_ID} className="flex xl:flex-row lg:flex-row md:flex-row flex-col gap-2 p-4 bg-zinc-50 ">
 						<CardHeader className="flex xl:flex-row lg:flex-row md:flex-row flex-col flex-1 gap-4 items-center">
 							<div>
 								<Icon name="Package" className="size-8 text-sky-500" />
@@ -34,7 +43,7 @@ export function Pedidos() {
 							<div 
                             className="flex xl:flex-col lg:flex-col md:flex-col flex-col gap-2 
                             xl:justify-start lg:items-start lg:justify-start md:items-start md:justify-start xl:items-start justify-center items-center">
-								<p className="font-bold text-zinc-700 ">Status: {pedido.STATUS_ID}</p>
+								<p className="font-bold text-zinc-700 ">Status: <span className="text-sky-500">{pedido.status.STATUS_DESC}</span></p>
 								<p className="font-bold text-zinc-700 ">
 									Total:<span className="text-sky-500"> R$ {itens.reduce((acc, item) => acc + item.ITEM_PRECO * item.ITEM_QTD, 0).toFixed(2)}</span>
 								</p>
@@ -43,6 +52,8 @@ export function Pedidos() {
 					</Card>
 				);
 			})}
+            
+            
 		</div>
 	);
 }

@@ -25,7 +25,7 @@ export function Produto() {
 
   return (
     <Page className="flex items-center justify-center">
-      <ContentBoxed className="flex flex-wrap items-center justify-center gap-10">
+      <ContentBoxed className="flex flex-wrap items-center justify-center gap-10 p-6">
         <div className="w-full md:w-[80%] lg:w-[65%] xl:w-[40%]">
           <Card className="flex h-[520px] w-full items-center justify-center">
             <div className="flex h-96 w-96 items-center">
