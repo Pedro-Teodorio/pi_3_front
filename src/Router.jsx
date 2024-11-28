@@ -10,18 +10,19 @@ import { FinalizarCompra } from "./pages/FinalizarCompra";
 import { Perfil } from "./pages/Perifl";
 
 export function Router() {
-	return (
-		<ProviderShopCart>
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/login" element={<Login />} />
-				<Route path="/cadastrar" element={<Cadastrar />} />
-				<Route path="/perfil/:name" element={<Perfil />} />
-				<Route path="/produto/:id/:name" element={<Produto />} />
-				<Route path="/processadores" element={<Processadores />} />
-				<Route path="/carrinho" element={<Carrinho />} />
-				<Route path="/finalizar" element={<FinalizarCompra />} />
-			</Routes>
-		</ProviderShopCart>
-	);
+  return (
+    <ProviderShopCart>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastrar" element={<Cadastrar />} />
+        <Route path="/perfil/:name" element={<Perfil />} />
+        <Route path="/produto/:id/:name" element={<Produto />} />
+        <Route path="/processadores" element={<Processadores />} />
+        <Route path="/allProducts" element={<AllProducts />} />
+        <Route path="/carrinho" element={<Carrinho />} />
+        <Route path="/finalizar" element={<FinalizarCompra />} />
+      </Routes>
+    </ProviderShopCart>
+  );
 }

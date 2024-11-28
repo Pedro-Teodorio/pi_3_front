@@ -1,13 +1,12 @@
-import PropTypes from "prop-types";
-export const InputContent = ({ placeholder, type, register,maxLength}) => {
+import PropTypes from 'prop-types';
+export const InputContent = ({ placeholder, type, register, maxLength }) => {
   return (
     <input
       type={type}
       placeholder={placeholder}
-      className={`w-full px-2 bg-transparent outline-none  h-full placeholder:text-neutral-400`}
+      className={`h-full w-full bg-transparent px-2 outline-none placeholder:text-neutral-400`}
       {...register}
       maxLength={maxLength}
-	
     />
   );
 };

@@ -1,169 +1,170 @@
 [
-    {
-       "id":1,
-       "name":"Processador AMD Ryzen 5 3600, 3.6GHz Max Turbo AM4",
-       "description":"Processador AMD Ryzen 5 3600, Cache 32MB, 3.6GHz (4.2GHz Max Turbo), AM4, Sem Vídeo - 100-100000031BOX",
-       "price":1699.90,
-       "image":"https://m.media-amazon.com/images/I/81b75EQJrgL._AC_SX679_.jpg",
-       "category_id":1
-    },
-    {
-       "id":2,
-       "name":"Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3060 Ti",
-       "description":"Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3060 Ti, 8GB, GDDR6 - GV-N306TGAMING OC-8GD",
-       "price":4999.90,
-       "image":"https://m.media-amazon.com/images/I/71omKnGJ4+S._AC_SX522_.jpg",
-       "category_id":2
-    },
-    {
-       "id":3,
-       "name":"Placa Mãe Asus TUF Gaming B550M-PLUS",
-       "description":"Placa Mãe Asus TUF Gaming B550M-PLUS, AMD AM4, mATX, DDR4",
-       "price":999.90,
-       "image":"https://m.media-amazon.com/images/I/81mjtZOzG0L._AC_SX522_.jpg",
-       "category_id":3
-    },
-    {
-       "id":4,
-       "name":"Memória DDR4 - 16GB (2x 8GB) / 3.200MHz - Corsair Vengeance LPX",
-       "description":"Memória Corsair Vengeance LPX 16GB (2x8GB) 3200MHz DDR4, Preto",
-       "price":499.90,
-       "image":"https://m.media-amazon.com/images/I/61wCOVcyvFL._AC_SL1500_.jpg",
-       "category_id":4
-    },
-    {
-       "id":5,
-       "name":"SSD 1 TB Kingston A2000, Leitura: 2200MB/s e Gravação: 2000MB/s",
-       "description":"SSD Kingston A2000 1TB, M.2 NVMe, Leitura 2200MB/s, Gravação 2000MB/s - SA2000M8/1000G",
-       "price":699.90,
-       "image":"https://m.media-amazon.com/images/I/51LO3JpxXSL._AC_SX522_.jpg",
-       "category_id":5
-    },
-    {
-       "id":6,
-       "name":"Processador Intel Core i9-10900K, Cache 20MB, 3.7GHz",
-       "description":"Processador Intel Core i9-10900K, Cache 20MB, 3.7GHz (5.3GHz Turbo), LGA 1200 - BX8070110900K",
-       "price":2999.90,
-       "image":"https://m.media-amazon.com/images/I/61aMmen0cFL._AC_SX679_.jpg",
-       "category_id":1
-    },
-    {
-       "id":7,
-       "name":"Placa de Vídeo Asus NVIDIA GeForce RTX 3080",
-       "description":"Placa de Vídeo Asus NVIDIA GeForce RTX 3080, 10GB, GDDR6X - TUF-RTX3080-10G-GAMING",
-       "price":9999.90,
-       "image":"https://m.media-amazon.com/images/I/81Bv26ZPp-L._AC_SX522_.jpg",
-       "category_id":2
-    },
-    {
-       "id":8,
-       "name":"Placa Mae Gigabyte B450M DS3H V2 DDR4 Socket AM4 Chipset",
-       "description":"Placa Mãe Gigabyte B450M DS3H, AMD AM4, mATX, DDR4",
-       "price":499.90,
-       "image":"https://m.media-amazon.com/images/I/619oLf666DL._AC_SL1000_.jpg",
-       "category_id":3
-    },
-    {
-       "id":9,
-       "name":"HyperX Fury HX316C10FB/8, Memória 8GB DDR3 1600MHz CL10 DIMM 1.50V",
-       "description":"Memória HyperX Fury 8GB 2666Mhz DDR4 CL16 Black - HX426C16FB3/8",
-       "price":299.90,
-       "image":"https://m.media-amazon.com/images/I/51lSuEyr5ZL._AC_SL1500_.jpg",
-       "category_id":4
-    },
-    {
-       "id":10,
-       "name":"SSD Crucial BX500, 240GB, Leitura: 540MB/s e Gravação: 500MB/s",
-       "description":"SSD Crucial BX500 240GB, SATA, Leitura 540MB/s, Gravação 500MB/s - CT240BX500SSD1",
-       "price":199.90,
-       "image":"https://m.media-amazon.com/images/I/51zhuXxYuRL._AC_SL1080_.jpg",
-       "category_id":5
-    },
-    {
-       "id":11,
-       "name":"Processador AMD Ryzen 9 5900X, Cache 70MB, 3.7GHz",
-       "description":"Processador AMD Ryzen 9 5900X, Cache 70MB, 3.7GHz (4.8GHz Max Turbo), AM4, Sem Vídeo - 100-100000061WOF",
-       "price":2999.90,
-       "image":"https://m.media-amazon.com/images/I/51S-lEYQZJL._AC_SL1500_.jpg",
-       "category_id":1
-    },
-    {
-       "id":12,
-       "name":"Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3090",
-       "description":"Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3090, 24GB, GDDR6X - GV-N3090GAMING OC-24GD",
-       "price":19999.90,
-       "image":"https://m.media-amazon.com/images/I/81ZxzeX8YBL._AC_SL1500_.jpg",
-       "category_id":2
-    },
-    {
-       "id":13,
-       "name":"Placa Mãe Asus Prime B450M Gaming/BR, AMD AM4, mATX",
-       "description":"Placa Mãe Asus Prime B450M Gaming/BR, AMD AM4, mATX, DDR4",
-       "price":599.90,
-       "image":"https://m.media-amazon.com/images/I/718jJQI5A+L._AC_SL1000_.jpg",
-       "category_id":3
-    },
-    {
-       "id":14,
-       "name":"Memória DDR4 - 16GB (2x 16GB) / 3.200MHz - Corsair Vengeance LPX",
-       "description":"Memória Corsair Vengeance LPX 32GB (2x16GB) 3200MHz DDR4, Preto",
-       "price":899.90,
-       "image":"https://m.media-amazon.com/images/I/61wCOVcyvFL._AC_SL1500_.jpg",
-       "category_id":4
-    },
-    {
-       "id":15,
-       "name":"XPG SX8200 Pro 1TB,M.2, Leitura 3500MB/s, Gravação 3000MB/s",
-       "description":"SSD XPG SX8200 Pro 1TB, M.2 NVMe, Leitura 3500MB/s, Gravação 3000MB/s - ASX8200PNP-1TT-C",
-       "price":899.90,
-       "image":"https://m.media-amazon.com/images/I/61KRjbxhoZL._AC_SL1000_.jpg",
-       "category_id":5
-    },
-    {
-       "id":16,
-       "name":"Processador Intel Core i7-10700K, Cache 16MB, 3.8GHz",
-       "description":"Processador Intel Core i7-10700K, Cache 16MB, 3.8GHz (5.1GHz Turbo), LGA 1200 - BX8070110700K",
-       "price":1999.90,
-       "image":"https://m.media-amazon.com/images/I/81eoV5SY8RL._AC_SL1500_.jpg",
-       "category_id":1
-    },
-    {
-       "id":17,
-       "name":"Placa de Vídeo Asus NVIDIA GeForce RTX 3070",
-       "description":"Placa de Vídeo Asus NVIDIA GeForce RTX 3070, 8GB, GDDR6 - DUAL-RTX3070-O8G",
-       "price":5999.90,
-       "image":"https://m.media-amazon.com/images/I/71UDGCdYLlL._AC_SL1500_.jpg",
-       "category_id":2
-    },
-    {
-       "id":18,
-       "name":"Placa Mãe Gigabyte B550M AORUS PRO, AMD AM4, mATX",
-       "description":"Placa Mãe Gigabyte B550M AORUS PRO, AMD AM4, mATX, DDR4",
-       "price":899.90,
-       "image":"https://m.media-amazon.com/images/I/61mngTZGfiL._AC_SL1000_.jpg",
-       "category_id":3
-    },
-    {
-       "id":19,
-       "name":"HX432C16FB3/16 - Memória HyperX Fury de 16GB DIMM DDR4 2666Mhz",
-       "description":"Memória HyperX Fury 16GB 2666Mhz DDR4 CL16 Black - HX426C16FB3/16",
-       "price":499.90,
-       "image":"https://m.media-amazon.com/images/I/61Udx3CqBtL._AC_SL1428_.jpg",
-       "category_id":4
-    },
-    {
-       "id":20,
-       "name":"SSD Crucial P2 500GB, M.2, Leitura 2300MB/s, Gravação 940MB/s",
-       "description":"SSD Crucial P2 500GB, M.2 NVMe, Leitura 2300MB/s, Gravação 940MB/s - CT500P2SSD8",
-       "price":399.90,
-       "image":"https://m.media-amazon.com/images/I/61eqMCabEyL._AC_SL1280_.jpg",
-       "category_id":5
-    },{
-      "id":21,
-      "name":"Processador AMD Ryzen 7 9700X, 8-Core, 16-Threads, 3.8GHz",
-      "description":"Processador AMD Ryzen 7 9700X, 8-Core, 16-Threads, 3.8GHz (5.5GHz Turbo), Cache 40MB, AM5, 100-100001404WOF-BR",
-      "price":2800,
-      "image":"https://m.media-amazon.com/images/I/61F3ZChalyL._AC_SL1500_.jpg",
-      "category_id":1
-    }
- ]
+  {
+    "id": 1,
+    "name": "Processador AMD Ryzen 5 3600, 3.6GHz Max Turbo AM4",
+    "description": "Processador AMD Ryzen 5 3600, Cache 32MB, 3.6GHz (4.2GHz Max Turbo), AM4, Sem Vídeo - 100-100000031BOX",
+    "price": 1699.9,
+    "image": "https://m.media-amazon.com/images/I/81b75EQJrgL._AC_SX679_.jpg",
+    "category_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3060 Ti",
+    "description": "Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3060 Ti, 8GB, GDDR6 - GV-N306TGAMING OC-8GD",
+    "price": 4999.9,
+    "image": "https://m.media-amazon.com/images/I/71omKnGJ4+S._AC_SX522_.jpg",
+    "category_id": 2
+  },
+  {
+    "id": 3,
+    "name": "Placa Mãe Asus TUF Gaming B550M-PLUS",
+    "description": "Placa Mãe Asus TUF Gaming B550M-PLUS, AMD AM4, mATX, DDR4",
+    "price": 999.9,
+    "image": "https://m.media-amazon.com/images/I/81mjtZOzG0L._AC_SX522_.jpg",
+    "category_id": 3
+  },
+  {
+    "id": 4,
+    "name": "Memória DDR4 - 16GB (2x 8GB) / 3.200MHz - Corsair Vengeance LPX",
+    "description": "Memória Corsair Vengeance LPX 16GB (2x8GB) 3200MHz DDR4, Preto",
+    "price": 499.9,
+    "image": "https://m.media-amazon.com/images/I/61wCOVcyvFL._AC_SL1500_.jpg",
+    "category_id": 4
+  },
+  {
+    "id": 5,
+    "name": "SSD 1 TB Kingston A2000, Leitura: 2200MB/s e Gravação: 2000MB/s",
+    "description": "SSD Kingston A2000 1TB, M.2 NVMe, Leitura 2200MB/s, Gravação 2000MB/s - SA2000M8/1000G",
+    "price": 699.9,
+    "image": "https://m.media-amazon.com/images/I/51LO3JpxXSL._AC_SX522_.jpg",
+    "category_id": 5
+  },
+  {
+    "id": 6,
+    "name": "Processador Intel Core i9-10900K, Cache 20MB, 3.7GHz",
+    "description": "Processador Intel Core i9-10900K, Cache 20MB, 3.7GHz (5.3GHz Turbo), LGA 1200 - BX8070110900K",
+    "price": 2999.9,
+    "image": "https://m.media-amazon.com/images/I/61aMmen0cFL._AC_SX679_.jpg",
+    "category_id": 1
+  },
+  {
+    "id": 7,
+    "name": "Placa de Vídeo Asus NVIDIA GeForce RTX 3080",
+    "description": "Placa de Vídeo Asus NVIDIA GeForce RTX 3080, 10GB, GDDR6X - TUF-RTX3080-10G-GAMING",
+    "price": 9999.9,
+    "image": "https://m.media-amazon.com/images/I/81Bv26ZPp-L._AC_SX522_.jpg",
+    "category_id": 2
+  },
+  {
+    "id": 8,
+    "name": "Placa Mae Gigabyte B450M DS3H V2 DDR4 Socket AM4 Chipset",
+    "description": "Placa Mãe Gigabyte B450M DS3H, AMD AM4, mATX, DDR4",
+    "price": 499.9,
+    "image": "https://m.media-amazon.com/images/I/619oLf666DL._AC_SL1000_.jpg",
+    "category_id": 3
+  },
+  {
+    "id": 9,
+    "name": "HyperX Fury HX316C10FB/8, Memória 8GB DDR3 1600MHz CL10 DIMM 1.50V",
+    "description": "Memória HyperX Fury 8GB 2666Mhz DDR4 CL16 Black - HX426C16FB3/8",
+    "price": 299.9,
+    "image": "https://m.media-amazon.com/images/I/51lSuEyr5ZL._AC_SL1500_.jpg",
+    "category_id": 4
+  },
+  {
+    "id": 10,
+    "name": "SSD Crucial BX500, 240GB, Leitura: 540MB/s e Gravação: 500MB/s",
+    "description": "SSD Crucial BX500 240GB, SATA, Leitura 540MB/s, Gravação 500MB/s - CT240BX500SSD1",
+    "price": 199.9,
+    "image": "https://m.media-amazon.com/images/I/51zhuXxYuRL._AC_SL1080_.jpg",
+    "category_id": 5
+  },
+  {
+    "id": 11,
+    "name": "Processador AMD Ryzen 9 5900X, Cache 70MB, 3.7GHz",
+    "description": "Processador AMD Ryzen 9 5900X, Cache 70MB, 3.7GHz (4.8GHz Max Turbo), AM4, Sem Vídeo - 100-100000061WOF",
+    "price": 2999.9,
+    "image": "https://m.media-amazon.com/images/I/51S-lEYQZJL._AC_SL1500_.jpg",
+    "category_id": 1
+  },
+  {
+    "id": 12,
+    "name": "Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3090",
+    "description": "Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3090, 24GB, GDDR6X - GV-N3090GAMING OC-24GD",
+    "price": 19999.9,
+    "image": "https://m.media-amazon.com/images/I/81ZxzeX8YBL._AC_SL1500_.jpg",
+    "category_id": 2
+  },
+  {
+    "id": 13,
+    "name": "Placa Mãe Asus Prime B450M Gaming/BR, AMD AM4, mATX",
+    "description": "Placa Mãe Asus Prime B450M Gaming/BR, AMD AM4, mATX, DDR4",
+    "price": 599.9,
+    "image": "https://m.media-amazon.com/images/I/718jJQI5A+L._AC_SL1000_.jpg",
+    "category_id": 3
+  },
+  {
+    "id": 14,
+    "name": "Memória DDR4 - 16GB (2x 16GB) / 3.200MHz - Corsair Vengeance LPX",
+    "description": "Memória Corsair Vengeance LPX 32GB (2x16GB) 3200MHz DDR4, Preto",
+    "price": 899.9,
+    "image": "https://m.media-amazon.com/images/I/61wCOVcyvFL._AC_SL1500_.jpg",
+    "category_id": 4
+  },
+  {
+    "id": 15,
+    "name": "XPG SX8200 Pro 1TB,M.2, Leitura 3500MB/s, Gravação 3000MB/s",
+    "description": "SSD XPG SX8200 Pro 1TB, M.2 NVMe, Leitura 3500MB/s, Gravação 3000MB/s - ASX8200PNP-1TT-C",
+    "price": 899.9,
+    "image": "https://m.media-amazon.com/images/I/61KRjbxhoZL._AC_SL1000_.jpg",
+    "category_id": 5
+  },
+  {
+    "id": 16,
+    "name": "Processador Intel Core i7-10700K, Cache 16MB, 3.8GHz",
+    "description": "Processador Intel Core i7-10700K, Cache 16MB, 3.8GHz (5.1GHz Turbo), LGA 1200 - BX8070110700K",
+    "price": 1999.9,
+    "image": "https://m.media-amazon.com/images/I/81eoV5SY8RL._AC_SL1500_.jpg",
+    "category_id": 1
+  },
+  {
+    "id": 17,
+    "name": "Placa de Vídeo Asus NVIDIA GeForce RTX 3070",
+    "description": "Placa de Vídeo Asus NVIDIA GeForce RTX 3070, 8GB, GDDR6 - DUAL-RTX3070-O8G",
+    "price": 5999.9,
+    "image": "https://m.media-amazon.com/images/I/71UDGCdYLlL._AC_SL1500_.jpg",
+    "category_id": 2
+  },
+  {
+    "id": 18,
+    "name": "Placa Mãe Gigabyte B550M AORUS PRO, AMD AM4, mATX",
+    "description": "Placa Mãe Gigabyte B550M AORUS PRO, AMD AM4, mATX, DDR4",
+    "price": 899.9,
+    "image": "https://m.media-amazon.com/images/I/61mngTZGfiL._AC_SL1000_.jpg",
+    "category_id": 3
+  },
+  {
+    "id": 19,
+    "name": "HX432C16FB3/16 - Memória HyperX Fury de 16GB DIMM DDR4 2666Mhz",
+    "description": "Memória HyperX Fury 16GB 2666Mhz DDR4 CL16 Black - HX426C16FB3/16",
+    "price": 499.9,
+    "image": "https://m.media-amazon.com/images/I/61Udx3CqBtL._AC_SL1428_.jpg",
+    "category_id": 4
+  },
+  {
+    "id": 20,
+    "name": "SSD Crucial P2 500GB, M.2, Leitura 2300MB/s, Gravação 940MB/s",
+    "description": "SSD Crucial P2 500GB, M.2 NVMe, Leitura 2300MB/s, Gravação 940MB/s - CT500P2SSD8",
+    "price": 399.9,
+    "image": "https://m.media-amazon.com/images/I/61eqMCabEyL._AC_SL1280_.jpg",
+    "category_id": 5
+  },
+  {
+    "id": 21,
+    "name": "Processador AMD Ryzen 7 9700X, 8-Core, 16-Threads, 3.8GHz",
+    "description": "Processador AMD Ryzen 7 9700X, 8-Core, 16-Threads, 3.8GHz (5.5GHz Turbo), Cache 40MB, AM5, 100-100001404WOF-BR",
+    "price": 2800,
+    "image": "https://m.media-amazon.com/images/I/61F3ZChalyL._AC_SL1500_.jpg",
+    "category_id": 1
+  }
+]
