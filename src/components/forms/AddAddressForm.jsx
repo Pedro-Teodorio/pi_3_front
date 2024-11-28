@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import instance from '@/api/axios';
 import { addAddress } from '@/api/endpoints';
 import { useNavigate } from 'react-router-dom';
-import PropTypes from 'prop-types';
+
 export function AddAdressesForm({ setIsOpen, onAddressAdded }) {
   const {
     handleSubmit,
@@ -56,7 +56,7 @@ export function AddAdressesForm({ setIsOpen, onAddressAdded }) {
     }
   }, [cep, setValue, setError]);
 
-<<<<<<< HEAD
+
 	const handleAddAdress = async (data) => {
 		try {
 			const response = await addAddress(data);
@@ -71,55 +71,7 @@ export function AddAdressesForm({ setIsOpen, onAddressAdded }) {
 			console.error("Erro ao adicionar o endereço:", error);
 		}
 	};
-	return (
-		<form onSubmit={handleSubmit(handleAddAdress)} className="flex flex-col gap-4">
-			<div className="space-y-2">
-				<Input.Root width=" lg:w-full md:w-full w-full" height="h-14">
-					<Input.Icon name="LocateFixed" />
-					<Input.Content
-						placeholder="CEP"
-						type="text"
-						maxLength={8}
-						register={{
-							...register("cep", {
-								required: "Campo CEP é obrigatório",
-								maxLength: {
-									value: 8,
-									message: "CEP deve ter 8 dígitos",
-								},
-							}),
-						}}
-					/>
-				</Input.Root>
-				{errors.cep && <p className="text-red-500 text-sm">{errors.cep.message}</p>}
-			</div>
-			{showFields && (
-				<>
-					<div className="space-y-2">
-						<Input.Root width=" lg:w-full md:w-full w-full" height="h-14">
-							<Input.Icon name="MapPin" />
-							<Input.Content placeholder="Estado" type="text" register={{ ...register("estado", { required: "Campo Estado é obrigatório" }) }} />
-						</Input.Root>
-						{errors.estado && <p className="text-red-500 text-sm">{errors.estado.message}</p>}
-					</div>
-=======
-  const handleAddAdress = async (data) => {
-    try {
-      const response = await addAddress(data);
-      if (response.status === 201) {
-        setIsOpen(false);
-        onAddressAdded();
-        navigate('/perfil');
-      } else {
-        console.log(
-          'Erro ao adicionar o endereço ao banco de dados',
-          response.status
-        );
-      }
-    } catch (error) {
-      console.error('Erro ao adicionar o endereço:', error);
-    }
-  };
+	
   return (
     <form
       onSubmit={handleSubmit(handleAddAdress)}
@@ -166,7 +118,7 @@ export function AddAdressesForm({ setIsOpen, onAddressAdded }) {
               <p className="text-sm text-red-500">{errors.estado.message}</p>
             )}
           </div>
->>>>>>> master
+
 
           <div className="space-y-2">
             <Input.Root width=" lg:w-full md:w-full w-full" height="h-14">
@@ -246,7 +198,4 @@ export function AddAdressesForm({ setIsOpen, onAddressAdded }) {
   );
 }
 
-AddAdressesForm.propTypes = {
-  setIsOpen: PropTypes.func,
-  onAddressAdded: PropTypes.func,
-};
+
