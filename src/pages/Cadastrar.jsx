@@ -46,7 +46,7 @@ export function Cadastrar() {
       .then((response) => {
         const token = response.data.token;
         localStorage.setItem('token', token);
-        navigate('/perfil');
+        navigate('/perfil/informacoes-pessoais');
       })
       .catch((error) => {
         console.error('Erro ao cadastrar usuário:', error);

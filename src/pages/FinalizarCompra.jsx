@@ -52,7 +52,7 @@ export function FinalizarCompra() {
 					<form className="flex flex-col gap-4 p-4" onSubmit={handleSubmit(handleFinalizarCompra)}>
 						<h2 className="text-xl text-sky-500 font-bold">Informações de envio</h2>
 						{addresses.length === 0 ? (
-							<Button className="bg-sky-500 hover:bg-sky-600 text-white font-bold p-4 " size="xl" onClick={() => navigate("/perfil")}>
+							<Button className="bg-sky-500 hover:bg-sky-600 text-white font-bold p-4 " size="xl" onClick={() => navigate("/perfil/endereco")}>
 								<Icon name="Plus" className="size-6" />
 								Adicionar Endereço
 							</Button>
