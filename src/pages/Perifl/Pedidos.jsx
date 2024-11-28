@@ -22,7 +22,7 @@ export function Pedidos() {
       {pedidos ? (
         pedidos?.map((pedido) => {
           const { itens } = pedido;
-          const formattedDate = new Date(pedido.PEDIDO_DATA).toLocaleDateString(
+          const formattedDate = new Date(pedido?.PEDIDO_DATA).toLocaleDateString(
             'pt-BR'
           );
           return (
@@ -41,7 +41,7 @@ export function Pedidos() {
                 </div>
                 <div>
                   <p className="font-bold">
-                    Numero do pedido: {`FLPP${pedido.PEDIDO_ID}`}
+                    Numero do pedido: {`FLPP${pedido?.PEDIDO_ID}`}
                   </p>
                   <p className="text-xs font-bold text-sky-500 md:text-lg lg:text-lg xl:text-lg">{`Data de confirmação  : ${formattedDate}`}</p>
                 </div>
@@ -51,7 +51,7 @@ export function Pedidos() {
                   <p className="font-bold text-zinc-700">
                     Status:{' '}
                     <span className="text-sky-500">
-                      {pedido.status.STATUS_DESC}
+                      {pedido.status?.STATUS_DESC}
                     </span>
                   </p>
                   <p className="font-bold text-zinc-700">
