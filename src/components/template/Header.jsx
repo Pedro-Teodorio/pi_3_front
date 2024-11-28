@@ -54,7 +54,7 @@ export function Header() {
         </div>
         <div className="nav-links absolute left-0 top-[-100%] z-20 flex min-h-[45vh] w-full items-center bg-zinc-900 px-5 duration-500 md:min-h-[30vh] lg:static lg:min-h-fit lg:w-auto">
           <ul className="flex flex-col gap-8 font-semibold text-white lg:flex-row lg:items-center lg:gap-[4vw]">
-            {categorias.slice(0, 4).map((categoria) => {
+            {categorias.slice(5, 9).map((categoria) => {
               return (
                 <li key={categoria.id}>
                   <Link
