@@ -5,14 +5,13 @@ import { Input } from '@/components/Input';
 import { ContentBoxed } from '@/components/template/ContentBoxed';
 import { Page } from '@/components/template/Page';
 import { Button } from '@/components/ui/button';
+
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function Login() {
- 
-  const notify = () => toast("Wow so easy!")
-
   const {
     register,
     handleSubmit,
@@ -21,9 +20,9 @@ export function Login() {
 
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (data) => {
     try {
-      const { email, password } = e;
+      const { email, password } = data;
       const response = await instance.post('/api/login', { email, password });
       if (response.status === 200) {
         const token = response.data.token;
@@ -33,12 +32,18 @@ export function Login() {
     } catch (error) {
       if (error.response) {
         if (error.response.status === 401) {
-          alert('Erro de autenticação: email ou senha inválidos.');
+          toast.error('Erro de autenticação: email ou senha inválidos.', {
+            position: 'top-right',
+          });
         }
       } else if (error.request) {
-        alert('Servidor indisponível. Verifique sua conexão.');
+        toast.error('Servidor indisponível. Verifique sua conexão.', {
+          position: 'top-right',
+        });
       } else {
-        alert('Erro desconhecido:', error.message);
+        toast.error(`Erro desconhecido: ${error.message}`, {
+          position: 'top-right',
+        });
       }
     }
   };
@@ -64,14 +69,20 @@ export function Login() {
                 <Input.Content
                   placeholder="Email"
                   type="email"
-                  register={{ ...register('email', { required: true }) }}
+                  register={{
+                    ...register('email', {
+                      required: 'Campo email é obrigatório',
+                      onBlur: (e) => {
+                        if (!e.target.value) {
+                          toast.warn('Campo email é obrigatório', {
+                            position: 'bottom-right',
+                          });
+                        }
+                      },
+                    }),
+                  }}
                 />
               </Input.Root>
-              {errors.email && (
-                <p className="text-sm text-red-500">
-                  Campo email é obrigatório
-                </p>
-              )}
             </div>
 
             <div className="space-y-2">
@@ -83,14 +94,20 @@ export function Login() {
                 <Input.Content
                   placeholder="Senha"
                   type="password"
-                  register={{ ...register('password', { required: true }) }}
+                  register={{
+                    ...register('password', {
+                      required: 'Campo senha é obrigatório',
+                      onBlur: (e) => {
+                        if (!e.target.value) {
+                          toast.warn('Campo senha é obrigatório', {
+                            position: 'bottom-right',
+                          });
+                        }
+                      },
+                    }),
+                  }}
                 />
               </Input.Root>
-              {errors.password && (
-                <p className="text-sm text-red-500">
-                  Campo senha é obrigatório
-                </p>
-              )}
             </div>
 
             <div className="flex w-full flex-col items-center justify-center gap-6">
@@ -102,10 +119,8 @@ export function Login() {
                 <p className="ml-4 flex items-center gap-2.5 text-base">
                   Entrar
                 </p>
-
                 <Icon name="ArrowRight" className="size-4" />
               </Button>
-              <Button onClick={() => {}}>Toster</Button>
               <span className="flex gap-2 text-sm">
                 Não tem conta ainda?
                 <a
@@ -120,6 +135,7 @@ export function Login() {
           </form>
           {errors.root?.serverError && <p>{errors.root.serverError.message}</p>}
         </div>
+        <ToastContainer />
       </ContentBoxed>
     </Page>
   );
